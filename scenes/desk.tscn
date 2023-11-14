@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5xehrpjkp1xg"]
+
+[ext_resource type="PackedScene" uid="uid://cv5nug7hiif8w" path="res://scenes/mailbox.tscn" id="1_hqi4e"]
+[ext_resource type="Texture2D" uid="uid://b8uatjkiyj1if" path="res://ui_elements/inbox.png" id="2_mhtu6"]
+[ext_resource type="Texture2D" uid="uid://ddlikxn0pvb3v" path="res://ui_elements/outbox.png" id="2_o26h4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5e2tw"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xmdb2"]
+
+[node name="desk_root" type="Node2D"]
+
+[node name="desk" type="MeshInstance2D" parent="."]
+position = Vector2(576, 328.75)
+scale = Vector2(1154, 656.5)
+mesh = SubResource("BoxMesh_5e2tw")
+texture = SubResource("PlaceholderTexture2D_xmdb2")
+
+[node name="inbox" parent="." instance=ExtResource("1_hqi4e")]
+position = Vector2(1053, 149)
+boxImage = ExtResource("2_mhtu6")
+
+[node name="outbox" parent="." instance=ExtResource("1_hqi4e")]
+position = Vector2(851, 149)
+boxImage = ExtResource("2_o26h4")
