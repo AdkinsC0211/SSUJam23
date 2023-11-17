@@ -15,10 +15,8 @@ func _ready():
 func _process(_delta):
 	if in_a_box:
 		if Input.is_action_just_pressed("right_mouse"):
-			print("fuck in " + self.get_name())
-
-
-
+			pass
+			#print("fuck in " + self.get_name())
 
 func _on_area_2d_mouse_entered():
 	in_a_box = true

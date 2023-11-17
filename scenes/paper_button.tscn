@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgvgt8amaiy37"]
+
+[ext_resource type="Texture2D" uid="uid://q4twguwx1jgh" path="res://ui_elements/paper.png" id="1_mx3vv"]
+[ext_resource type="Script" path="res://scripts/paper_button_version.gd" id="2_h0gp0"]
+
+[node name="paper_button" type="TextureButton"]
+scale = Vector2(0.341275, 0.340968)
+button_mask = 2
+texture_normal = ExtResource("1_mx3vv")
+script = ExtResource("2_h0gp0")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

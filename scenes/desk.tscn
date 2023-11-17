@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5xehrpjkp1xg"]
+[gd_scene load_steps=8 format=3 uid="uid://b5xehrpjkp1xg"]
 
 [ext_resource type="PackedScene" uid="uid://cv5nug7hiif8w" path="res://scenes/mailbox.tscn" id="1_hqi4e"]
 [ext_resource type="Texture2D" uid="uid://b8uatjkiyj1if" path="res://ui_elements/inbox.png" id="2_mhtu6"]
 [ext_resource type="Texture2D" uid="uid://ddlikxn0pvb3v" path="res://ui_elements/outbox.png" id="2_o26h4"]
-[ext_resource type="PackedScene" uid="uid://clsvhhso211mt" path="res://scenes/paper.tscn" id="4_cowof"]
+[ext_resource type="Script" path="res://scenes/layer_manager.gd" id="4_6eg0n"]
+[ext_resource type="PackedScene" uid="uid://bgvgt8amaiy37" path="res://scenes/paper_button.tscn" id="5_3s8ee"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5e2tw"]
 
@@ -26,8 +27,20 @@ boxImage = ExtResource("2_mhtu6")
 position = Vector2(851, 158)
 boxImage = ExtResource("2_o26h4")
 
-[node name="paper_root" parent="." instance=ExtResource("4_cowof")]
-position = Vector2(397, 253)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(578, 334)
+
+[node name="paper_manager" type="Node" parent="."]
+script = ExtResource("4_6eg0n")
+
+[node name="paper_button" parent="paper_manager" instance=ExtResource("5_3s8ee")]
+offset_left = 175.0
+offset_top = 210.0
+offset_right = 775.0
+offset_bottom = 1010.0
+
+[node name="paper_button2" parent="paper_manager" instance=ExtResource("5_3s8ee")]
+offset_left = 332.0
+offset_top = 224.0
+offset_right = 920.0
+offset_bottom = 980.0

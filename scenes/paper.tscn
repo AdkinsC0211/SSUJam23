@@ -1,22 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://clsvhhso211mt"]
+[gd_scene load_steps=3 format=3 uid="uid://clsvhhso211mt"]
 
-[ext_resource type="Script" path="res://scripts/paper.gd" id="1_75781"]
 [ext_resource type="Texture2D" uid="uid://q4twguwx1jgh" path="res://ui_elements/paper.png" id="2_7gysb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x36p0"]
 size = Vector2(300, 398)
 
 [node name="paper_root" type="Area2D"]
-script = ExtResource("1_75781")
 
 [node name="paper_box" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x36p0")
 
 [node name="paper_visual" type="TextureRect" parent="."]
-offset_left = -149.0
+offset_left = -150.0
 offset_top = -200.0
-offset_right = 451.0
-offset_bottom = 600.0
+offset_right = 450.0
+offset_bottom = 601.0
 scale = Vector2(0.49888, 0.498099)
 texture = ExtResource("2_7gysb")
 
