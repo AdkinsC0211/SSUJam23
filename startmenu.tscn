@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://cenliddcll1ff"]
+
+[ext_resource type="Script" path="res://startmenu.gd" id="1_nrvxs"]
+[ext_resource type="Texture2D" uid="uid://q80ar0l3i6k4" path="res://titttle.png" id="2_mrx50"]
+[ext_resource type="Texture2D" uid="uid://cbhaa1ptnpb6c" path="res://logo.png" id="3_7csr3"]
+[ext_resource type="Texture2D" uid="uid://b6ckanekd0h77" path="res://button_Start.png" id="3_jxhcd"]
+[ext_resource type="Texture2D" uid="uid://djocsyclw3gkq" path="res://buttonCredits.png" id="4_xa27h"]
+[ext_resource type="Texture2D" uid="uid://bjnrmnu65dbp6" path="res://button_Quit.png" id="5_1hmew"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_nrvxs")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(577, 319)
+scale = Vector2(0.751134, 0.378666)
+texture = ExtResource("2_mrx50")
+
+[node name="Sprite2D" type="Sprite2D" parent="background"]
+position = Vector2(126.475, -361.797)
+scale = Vector2(0.578949, 1.15398)
+texture = ExtResource("3_7csr3")
+
+[node name="Start" type="Sprite2D" parent="."]
+position = Vector2(171, 270)
+scale = Vector2(0.437425, 0.437425)
+texture = ExtResource("3_jxhcd")
+
+[node name="Button" type="Button" parent="Start"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -283.477
+offset_top = -80.0138
+offset_right = -275.477
+offset_bottom = -72.0138
+scale = Vector2(70.2539, 21.7192)
+
+[node name="Credits" type="Sprite2D" parent="."]
+position = Vector2(176, 357)
+scale = Vector2(0.440845, 0.440845)
+texture = ExtResource("4_xa27h")
+
+[node name="credits" type="Button" parent="Credits"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -269.936
+offset_top = -93.0033
+offset_right = -261.936
+offset_bottom = -85.0033
+scale = Vector2(68.8177, 20.4241)
+
+[node name="Quit" type="Sprite2D" parent="."]
+position = Vector2(174, 449)
+scale = Vector2(0.420133, 0.409578)
+texture = ExtResource("5_1hmew")
+
+[node name="quit" type="Button" parent="Quit"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -290.817
+offset_top = -105.752
+offset_right = -282.817
+offset_bottom = -97.7518
+scale = Vector2(73.9463, 23.6964)
+
+[connection signal="pressed" from="Start/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Credits/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Quit/quit" to="." method="_on_quit_pressed"]
