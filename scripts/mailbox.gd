@@ -17,10 +17,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	for child in paper_manager.get_children():
-		child.global_position.x = get_node("mailbox_area/paper_position").global_position.x - get_node("mailbox_area").scale.x*9
-		child.global_position.y = get_node("mailbox_area/paper_position").global_position.y - get_node("mailbox_area").scale.y*7
-		child.scale.x = .3
-		child.scale.y = .3
+		child.global_position.x = get_node("mailbox_area/paper_position").global_position.x - get_node("mailbox_area").scale.x*4
+		child.global_position.y = get_node("mailbox_area/paper_position").global_position.y - get_node("mailbox_area").scale.y*2
+		child.scale.x = .12
+		child.scale.y = .12
 	if in_a_box:
 		if Input.is_action_just_pressed("right_mouse"):
 			var paper_being_held
