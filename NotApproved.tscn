@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckcfdicn236ey"]
+
+[ext_resource type="Texture2D" uid="uid://cy6n2ycjjhs6l" path="res://Red_Stamper.png" id="1_0ebjm"]
+[ext_resource type="Script" path="res://NotApproved.gd" id="1_8aeho"]
+
+[node name="notapproved" type="Node2D"]
+script = ExtResource("1_8aeho")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.558773, 0.558773)
+texture = ExtResource("1_0ebjm")
+
+[node name="Button2" type="Button" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -118.116
+offset_top = -170.015
+offset_right = -117.116
+offset_bottom = -162.015
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.067, 1.04643)
+action_mode = 0
+
+[connection signal="pressed" from="Sprite2D/Button2" to="." method="_on_button_2_pressed"]

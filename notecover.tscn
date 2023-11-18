@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://djbiq1ds7acbd"]
+
+[ext_resource type="Texture2D" uid="uid://bca3schjweitm" path="res://Notebook_Cover.png" id="1_b4ssm"]
+[ext_resource type="Script" path="res://notecover.gd" id="2_v6til"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(8, 11)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(550, 227)
+texture = ExtResource("1_b4ssm")
+script = ExtResource("2_v6til")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -264.0
+offset_top = -317.0
+offset_right = -256.0
+offset_bottom = -309.0
+scale = Vector2(64.8241, 81.6263)
+action_mode = 0
+
+[connection signal="pressed" from="Sprite2D/Button" to="Sprite2D" method="_on_button_pressed"]

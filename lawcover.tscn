@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj5olaodwrpkw"]
+
+[ext_resource type="Texture2D" uid="uid://ch1a82e8ah2ra" path="res://Lawbook_Cover.png" id="1_58qk2"]
+[ext_resource type="Script" path="res://lawcover.gd" id="2_45ky0"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-406, -96)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(965, 403)
+texture = ExtResource("1_58qk2")
+script = ExtResource("2_45ky0")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -200.0
+offset_top = -260.0
+offset_right = -192.0
+offset_bottom = -252.0
+scale = Vector2(46.9458, 62.6537)
+
+[connection signal="pressed" from="Sprite2D/Button" to="Sprite2D" method="_on_button_pressed"]
