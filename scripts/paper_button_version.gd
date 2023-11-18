@@ -44,13 +44,11 @@ func _process(_delta):
 		if self.get_parent().get_name() != desk_paper_manager_label:
 			self.reparent(desk_paper_manager_label)
 		
-	#print(self.get_parent().get_name())
-	#print(desk_paper_manager_label)
 	if self.get_parent().get_name() == desk_paper_manager_label and !held:
 		for object in overlapping_areas:
 			if object.get_parent().get_name() == outbox_label:
 				self.reparent(outbox_manager)
-				print("in outbox")
+				
 			
 			
 			if object.get_parent().get_name() == inbox_label:
