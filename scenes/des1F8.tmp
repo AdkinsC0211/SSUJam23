@@ -20,12 +20,12 @@ mesh = SubResource("BoxMesh_5e2tw")
 texture = SubResource("PlaceholderTexture2D_xmdb2")
 
 [node name="inbox" parent="." instance=ExtResource("1_hqi4e")]
-position = Vector2(1041, 177)
+position = Vector2(1052, 160)
 scale = Vector2(1, 1)
 boxImage = ExtResource("2_mhtu6")
 
 [node name="outbox" parent="." instance=ExtResource("1_hqi4e")]
-position = Vector2(779.001, 166)
+position = Vector2(851, 158)
 boxImage = ExtResource("2_o26h4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -35,11 +35,7 @@ position = Vector2(578, 334)
 script = ExtResource("3_vffcs")
 
 [node name="paper_button" parent="paper_manager" instance=ExtResource("5_3s8ee")]
-
-[node name="paper_button2" parent="paper_manager" instance=ExtResource("5_3s8ee")]
-offset_left = 388.0
-offset_top = 317.0
-offset_right = 976.0
-offset_bottom = 1073.0
-
-[connection signal="child_entered_tree" from="paper_manager" to="paper_manager" method="_on_child_entered_tree"]
+offset_left = 175.0
+offset_top = 210.0
+offset_right = 775.0
+offset_bottom = 1010.0
