@@ -23,3 +23,6 @@ func sort_paper_order():
 		#print(child.get_name() + " " + str(child.layer))
 	#print(self.get_children())
 	
+
+func _on_child_entered_tree(node):
+	node.set_rotation_degrees(0)
