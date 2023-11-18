@@ -14,7 +14,6 @@ scale = Vector2(9.56, 8.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mailbox_area"]
 position = Vector2(0.116111, 5.80781)
-scale = Vector2(1, 1)
 skew = -0.15708
 shape = SubResource("RectangleShape2D_f1win")
 

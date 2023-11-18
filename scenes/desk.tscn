@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://b5xehrpjkp1xg"]
 
 [ext_resource type="PackedScene" uid="uid://cv5nug7hiif8w" path="res://scenes/mailbox.tscn" id="1_hqi4e"]
-[ext_resource type="Texture2D" uid="uid://cofe11b7uj8cw" path="res://ui_elements/desk_top.png" id="1_ovnt1"]
+[ext_resource type="Texture2D" uid="uid://dio67fqrs822p" path="res://ui_elements/desk_top.png" id="1_ovnt1"]
 [ext_resource type="Texture2D" uid="uid://b8uatjkiyj1if" path="res://ui_elements/inbox.png" id="2_mhtu6"]
 [ext_resource type="Texture2D" uid="uid://ddlikxn0pvb3v" path="res://ui_elements/outbox.png" id="2_o26h4"]
 [ext_resource type="Script" path="res://scripts/desk.gd" id="2_x0q6g"]
 [ext_resource type="Script" path="res://scripts/layer_manager.gd" id="3_vffcs"]
 [ext_resource type="PackedScene" uid="uid://bgvgt8amaiy37" path="res://scenes/paper_button.tscn" id="5_3s8ee"]
-[ext_resource type="Texture2D" uid="uid://88ymkrlqq2a3" path="res://ui_elements/desk_stuff.png" id="6_y3hdv"]
+[ext_resource type="Texture2D" uid="uid://cixrek0jslwhs" path="res://ui_elements/desk_stuff.png" id="6_y3hdv"]
 
 [node name="desk_root" type="Node2D"]
 scale = Vector2(0.999999, 0.999999)
@@ -40,7 +40,7 @@ position = Vector2(576.001, 324)
 [node name="paper_manager" type="Node" parent="."]
 script = ExtResource("3_vffcs")
 
-[node name="paper_button" parent="." instance=ExtResource("5_3s8ee")]
+[node name="paper_button" parent="paper_manager" instance=ExtResource("5_3s8ee")]
 offset_left = 486.0
 offset_top = 349.0
 offset_right = 1074.0

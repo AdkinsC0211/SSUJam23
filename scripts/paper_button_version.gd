@@ -70,16 +70,17 @@ func update_paper_order():
 func _on_pressed():
 	if Input.is_action_pressed("left_mouse"):
 		reading_mode = !reading_mode
-		if reading_mode:
-			#global_position = $/root/desk_root/Camera2D.global_position
-			spot = self.global_position
-			global_position = Vector2(300,0)
-			self.scale.x = .9
-			self.scale.y = .85
-		elif !reading_mode:
-			self.scale.x = .2
-			self.scale.y = .2
-			global_position = spot
+		if self.get_parent().get_name() == desk_paper_manager_label:
+			if reading_mode:
+				#global_position = $/root/desk_root/Camera2D.global_position
+				spot = self.global_position
+				global_position = Vector2(300,0)
+				self.scale.x = .9
+				self.scale.y = .85
+			elif !reading_mode:
+				self.scale.x = .2
+				self.scale.y = .2
+				global_position = spot
 			
 	elif Input.is_action_just_pressed("right_mouse"):
 		held = !held
