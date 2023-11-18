@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dv5wlcjrq5ra2"
+path="res://.godot/imported/sticky up.wav-f2c666769c9cac0bd158140b977c1e8b.sample"
+
+[deps]
+
+source_file="res://sounds/sticky up.wav"
+dest_files=["res://.godot/imported/sticky up.wav-f2c666769c9cac0bd158140b977c1e8b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

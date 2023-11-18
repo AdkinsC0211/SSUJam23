@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bonquyxlt8n7t"
+path="res://.godot/imported/chair creak.wav-16c7d9261bb6f412a637461b79eefa88.sample"
+
+[deps]
+
+source_file="res://sounds/chair creak.wav"
+dest_files=["res://.godot/imported/chair creak.wav-16c7d9261bb6f412a637461b79eefa88.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

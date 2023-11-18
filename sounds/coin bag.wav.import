@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://7wy6p8iw3u7l"
+path="res://.godot/imported/coin bag.wav-55f13dc32432120f03f14967e47a402c.sample"
+
+[deps]
+
+source_file="res://sounds/coin bag.wav"
+dest_files=["res://.godot/imported/coin bag.wav-55f13dc32432120f03f14967e47a402c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
