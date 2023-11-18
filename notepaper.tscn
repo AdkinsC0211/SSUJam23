@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c12ii24v0fy8t"]
+
+[ext_resource type="Texture2D" uid="uid://dttimeuh3x6dy" path="res://Notebook_Full.png" id="1_c7w1a"]
+[ext_resource type="Script" path="res://notepaper.gd" id="1_tb4rc"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_tb4rc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(581, 332)
+texture = ExtResource("1_c7w1a")

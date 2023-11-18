@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsjm7h0skb1jl"]
+
+[ext_resource type="Texture2D" uid="uid://ch1a82e8ah2ra" path="res://Lawbook_Cover.png" id="1_5ppuu"]
+[ext_resource type="Script" path="res://rulebook.gd" id="1_biich"]
+
+[node name="rulebook" type="Node2D"]
+script = ExtResource("1_biich")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(410, 311)
+texture = ExtResource("1_5ppuu")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -215.0
+offset_top = -259.0
+offset_right = -207.0
+offset_bottom = -251.0
+scale = Vector2(52.2635, 65.1193)
+
+[connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
