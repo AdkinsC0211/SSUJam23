@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cc5rebetshisv" path="res://scenes/top_right_drawer.tscn" id="3_1o8jv"]
 [ext_resource type="Script" path="res://scripts/layer_manager.gd" id="3_vffcs"]
 [ext_resource type="PackedScene" uid="uid://bgvgt8amaiy37" path="res://scenes/paper_button.tscn" id="5_3s8ee"]
-[ext_resource type="Texture2D" uid="uid://88ymkrlqq2a3" path="res://ui_elements/desk_stuff.png" id="6_y3hdv"]
+[ext_resource type="Texture2D" uid="uid://cixrek0jslwhs" path="res://ui_elements/desk_stuff.png" id="6_y3hdv"]
 [ext_resource type="Script" path="res://scripts/camera_move.gd" id="9_rx6um"]
 [ext_resource type="Texture2D" uid="uid://cyjv30ei02xur" path="res://ui_elements/right_bot_open_back.png" id="12_esjvo"]
 [ext_resource type="Texture2D" uid="uid://dml0miitkbpid" path="res://ui_elements/right_bot_open_front.png" id="13_6va6b"]
@@ -80,14 +80,10 @@ position = Vector2(814.514, 335.993)
 scale = Vector2(1.00069, 0.709586)
 boxImage = ExtResource("2_mhtu6")
 
-[node name="DeskStuff" type="Sprite2D" parent="."]
-position = Vector2(527, 208)
-scale = Vector2(0.783076, 0.7936)
-texture = ExtResource("6_y3hdv")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576.001, 716.001)
-script = ExtResource("9_rx6um")
+[node name="shredder" parent="desk" instance=ExtResource("1_hqi4e")]
+position = Vector2(1110.92, 485.188)
+scale = Vector2(-1.81307, 0.561434)
+skew = -1.2514
 
 [node name="paper_manager" type="Node" parent="."]
 script = ExtResource("3_vffcs")
@@ -104,6 +100,15 @@ offset_top = 448.0
 offset_right = 1237.0
 offset_bottom = 1204.0
 
+[node name="DeskStuff" type="Sprite2D" parent="."]
+position = Vector2(527, 180)
+scale = Vector2(0.783076, 0.7936)
+texture = ExtResource("6_y3hdv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576.001, 324)
+script = ExtResource("9_rx6um")
+
 [node name="RoomTone" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_mtndd")
 autoplay = true
@@ -113,11 +118,15 @@ stream = ExtResource("22_mtndd")
 autoplay = true
 script = ExtResource("23_y3eq6")
 
-[node name="approved" parent="." instance=ExtResource("24_pepo3")]
-position = Vector2(168, 445)
+[node name="stamp_manager" type="Node" parent="."]
 
-[node name="notapproved" parent="." instance=ExtResource("25_hyexi")]
-position = Vector2(292, 453)
+[node name="notapproved" parent="stamp_manager" instance=ExtResource("25_hyexi")]
+position = Vector2(236, 357)
+scale = Vector2(0.999999, 0.999999)
+
+[node name="approved" parent="stamp_manager" instance=ExtResource("24_pepo3")]
+position = Vector2(168, 444.999)
+scale = Vector2(0.999999, 0.999999)
 
 [node name="book_manager" type="Node" parent="."]
 

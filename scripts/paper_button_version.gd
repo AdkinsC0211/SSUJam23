@@ -11,6 +11,7 @@ var inbox_manager
 var inbox_label
 var outbox_manager
 var outbox_label
+var shredder_label
 var layer = 0
 var overlapping_areas: Array
 var body_area
@@ -18,7 +19,6 @@ var reading_mode: bool
 var spot
 
 
-signal layer_update
 signal overlapping_mailbox
 
 # Called when the node enters the scene tree for the first time.
@@ -30,12 +30,14 @@ func _ready():
 	
 	desk_paper_manager = $/root/desk_root/paper_manager
 	desk_paper_manager_label = desk_paper_manager.get_name()
-	desk_paper_manager.connect("update_paper_order",update_paper_order)
 	
 	inbox_manager = $/root/desk_root/desk/inbox/mailbox_area/paper_stack
 	inbox_label = inbox_manager.get_parent().get_parent().get_name()
+	
 	outbox_manager = $/root/desk_root/desk/outbox/mailbox_area/paper_stack
 	outbox_label = outbox_manager.get_parent().get_parent().get_name()
+	
+	shredder_label = $/root/desk_root/desk/shredder.get_name()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,38 +47,44 @@ func _process(_delta):
 		global_position = get_global_mouse_position() - grab_offset
 		overlapping_areas = body_area.get_overlapping_areas()
 		if self.get_parent().get_name() != desk_paper_manager_label:
-			self.reparent(desk_paper_manager_label)
+			self.reparent(desk_paper_manager)
+			parent = self.get_parent()
 		
 	if self.get_parent().get_name() == desk_paper_manager_label and !held:
 		for object in overlapping_areas:
 			if object.get_parent().get_name() == outbox_label:
 				self.reparent(outbox_manager)
+				parent = self.get_parent()
+				return
+				
+			if object.get_parent().get_name() == shredder_label:
+				queue_free()
+				return
 				
 			if object.get_parent().get_name() == inbox_label:
 				self.reparent(inbox_manager)
+				parent = self.get_parent()
+				return
 
 
 
 
-func update_paper_order():
-	for child in parent.get_children():
-		if child.get("held")!=null and child.get("held") == true:
-			child.layer = 0
-		elif child.get("held")!=null:
-			child.layer -= 1
+
+
 
 func _on_pressed():
+	if self.get_parent() == desk_paper_manager:
+		desk_paper_manager.move_child(self,-1)
 	if Input.is_action_pressed("left_mouse"):
-		reading_mode = !reading_mode
-		layer = 0
-		layer_update.emit()
+		if self.get_parent().get_name() == desk_paper_manager_label:
+			reading_mode = !reading_mode
 		if self.get_parent().get_name() == desk_paper_manager_label:
 			if reading_mode:
-				#global_position = $/root/desk_root/Camera2D.global_position
 				spot = self.global_position
 				global_position = Vector2(300,0)
 				self.scale.x = .9
 				self.scale.y = .85
+				
 				$"/root/Singleton".play_sound("paper flip")
 			elif !reading_mode:
 				self.scale.x = .2
@@ -89,7 +97,7 @@ func _on_pressed():
 			held = !held
 		if held and self.get_parent().get_name() != desk_paper_manager_label:
 			self.reparent(desk_paper_manager)
-		layer_update.emit()
+			parent = self.get_parent()
 		if held and !reading_mode:
 			$"/root/Singleton".play_sound("page up")
 			grab_offset.x = get_global_mouse_position().x - self.global_position.x
