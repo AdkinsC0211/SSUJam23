@@ -14,6 +14,9 @@ var outbox_label
 var layer = 0
 var overlapping_areas: Array
 var body_area
+var reading_mode: bool
+var spot
+
 
 signal layer_update
 signal overlapping_mailbox
@@ -29,9 +32,9 @@ func _ready():
 	desk_paper_manager_label = desk_paper_manager.get_name()
 	desk_paper_manager.connect("update_paper_order",update_paper_order)
 	
-	inbox_manager = $/root/desk_root/inbox/mailbox_area/paper_stack
+	inbox_manager = $/root/desk_root/desk/inbox/mailbox_area/paper_stack
 	inbox_label = inbox_manager.get_parent().get_parent().get_name()
-	outbox_manager = $/root/desk_root/outbox/mailbox_area/paper_stack
+	outbox_manager = $/root/desk_root/desk/outbox/mailbox_area/paper_stack
 	outbox_label = outbox_manager.get_parent().get_parent().get_name()
 
 
@@ -49,8 +52,6 @@ func _process(_delta):
 			if object.get_parent().get_name() == outbox_label:
 				self.reparent(outbox_manager)
 				
-			
-			
 			if object.get_parent().get_name() == inbox_label:
 				self.reparent(inbox_manager)
 
@@ -65,23 +66,40 @@ func update_paper_order():
 			child.layer -= 1
 
 func _on_pressed():
-	held = !held
-	if held and self.get_parent().get_name() != desk_paper_manager_label:
-		self.reparent(desk_paper_manager)
-	layer_update.emit()
-	if held:
-		grab_offset.x = get_global_mouse_position().x - self.global_position.x
-		grab_offset.y = get_global_mouse_position().y - self.global_position.y
+	if Input.is_action_pressed("left_mouse"):
+		reading_mode = !reading_mode
+		if self.get_parent().get_name() == desk_paper_manager_label:
+			if reading_mode:
+				#global_position = $/root/desk_root/Camera2D.global_position
+				spot = self.global_position
+				global_position = Vector2(300,0)
+				self.scale.x = .9
+				self.scale.y = .85
+			elif !reading_mode:
+				self.scale.x = .2
+				self.scale.y = .2
+				global_position = spot
+			
+	elif Input.is_action_just_pressed("right_mouse"):
+		held = !held
+		if held and self.get_parent().get_name() != desk_paper_manager_label:
+			self.reparent(desk_paper_manager)
+		layer_update.emit()
+		if held:
+			grab_offset.x = get_global_mouse_position().x - self.global_position.x
+			grab_offset.y = get_global_mouse_position().y - self.global_position.y
 	
 
 
 func _on_mouse_entered():
-	self.scale.x = .4
-	self.scale.y = .4
+	if !reading_mode:
+		self.scale.x = .3
+		self.scale.y = .3
 
 
 func _on_mouse_exited():
-	self.scale.x = .35
-	self.scale.y = .35
+	if !reading_mode:
+		self.scale.x = .2
+		self.scale.y = .2
 
 

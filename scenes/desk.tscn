@@ -1,45 +1,103 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5xehrpjkp1xg"]
+[gd_scene load_steps=22 format=3 uid="uid://b5xehrpjkp1xg"]
 
 [ext_resource type="PackedScene" uid="uid://cv5nug7hiif8w" path="res://scenes/mailbox.tscn" id="1_hqi4e"]
+[ext_resource type="Texture2D" uid="uid://w4evknifcup6" path="res://ui_elements/office_background.png" id="1_jmphy"]
+[ext_resource type="Texture2D" uid="uid://dio67fqrs822p" path="res://ui_elements/desk_top.png" id="1_ovnt1"]
 [ext_resource type="Texture2D" uid="uid://b8uatjkiyj1if" path="res://ui_elements/inbox.png" id="2_mhtu6"]
+[ext_resource type="PackedScene" uid="uid://bamhei43b1uap" path="res://scenes/desk_base.tscn" id="2_o8h0e"]
 [ext_resource type="Texture2D" uid="uid://ddlikxn0pvb3v" path="res://ui_elements/outbox.png" id="2_o26h4"]
+[ext_resource type="Script" path="res://scripts/desk.gd" id="2_x0q6g"]
+[ext_resource type="PackedScene" uid="uid://cc5rebetshisv" path="res://scenes/top_right_drawer.tscn" id="3_1o8jv"]
 [ext_resource type="Script" path="res://scripts/layer_manager.gd" id="3_vffcs"]
 [ext_resource type="PackedScene" uid="uid://bgvgt8amaiy37" path="res://scenes/paper_button.tscn" id="5_3s8ee"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_5e2tw"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xmdb2"]
+[ext_resource type="Texture2D" uid="uid://cixrek0jslwhs" path="res://ui_elements/desk_stuff.png" id="6_y3hdv"]
+[ext_resource type="Script" path="res://scripts/camera_move.gd" id="9_rx6um"]
+[ext_resource type="Texture2D" uid="uid://cyjv30ei02xur" path="res://ui_elements/right_bot_open_back.png" id="12_esjvo"]
+[ext_resource type="Texture2D" uid="uid://dml0miitkbpid" path="res://ui_elements/right_bot_open_front.png" id="13_6va6b"]
+[ext_resource type="PackedScene" uid="uid://bfr7laxmivpal" path="res://scenes/bot_right_drawer.tscn" id="13_dkv5e"]
+[ext_resource type="PackedScene" uid="uid://brdw8jqmgovnt" path="res://scenes/left_drawer.tscn" id="14_oeqsk"]
+[ext_resource type="Texture2D" uid="uid://c14gubnnwq8y5" path="res://ui_elements/right_top_open_back.png" id="14_u64ty"]
+[ext_resource type="PackedScene" uid="uid://5oa5esx70ju5" path="res://scenes/center_drawer.tscn" id="15_arkyy"]
+[ext_resource type="Texture2D" uid="uid://dpbbl822217aj" path="res://ui_elements/left_drawer_open_back.png" id="15_innif"]
+[ext_resource type="Texture2D" uid="uid://ujfwwdvudt21" path="res://ui_elements/right_top_open_front.png" id="15_mms6g"]
+[ext_resource type="Texture2D" uid="uid://5c6djd0blaix" path="res://ui_elements/left_drawer_open_front.png" id="16_slmwq"]
 
 [node name="desk_root" type="Node2D"]
 scale = Vector2(0.999999, 0.999999)
 
-[node name="desk" type="MeshInstance2D" parent="."]
-position = Vector2(576, 328.75)
-scale = Vector2(1154, 656.5)
-mesh = SubResource("BoxMesh_5e2tw")
-texture = SubResource("PlaceholderTexture2D_xmdb2")
+[node name="OfficeBackground" type="Sprite2D" parent="."]
+position = Vector2(576.001, 642.001)
+scale = Vector2(0.753434, 0.758866)
+texture = ExtResource("1_jmphy")
 
-[node name="inbox" parent="." instance=ExtResource("1_hqi4e")]
-position = Vector2(1041, 177)
+[node name="desk_base_root" parent="." instance=ExtResource("2_o8h0e")]
+position = Vector2(435, 630.001)
 scale = Vector2(1, 1)
-boxImage = ExtResource("2_mhtu6")
 
-[node name="outbox" parent="." instance=ExtResource("1_hqi4e")]
-position = Vector2(779.001, 166)
+[node name="bot_right_drawer" parent="desk_base_root" instance=ExtResource("13_dkv5e")]
+visible = false
+position = Vector2(514.001, 149)
+scale = Vector2(0.719939, 0.49332)
+back_texture = ExtResource("12_esjvo")
+front_texture = ExtResource("13_6va6b")
+
+[node name="top_right_drawer" parent="desk_base_root" instance=ExtResource("3_1o8jv")]
+visible = false
+position = Vector2(535.001, 64.0002)
+scale = Vector2(0.785406, 0.477587)
+back_texture = ExtResource("14_u64ty")
+front_texture = ExtResource("15_mms6g")
+
+[node name="left_drawer" parent="desk_base_root" instance=ExtResource("14_oeqsk")]
+visible = false
+position = Vector2(-293, 96.0002)
+scale = Vector2(0.815056, 0.501697)
+back_texture = ExtResource("15_innif")
+front_texture = ExtResource("16_slmwq")
+
+[node name="center_drawer" parent="desk_base_root" instance=ExtResource("15_arkyy")]
+position = Vector2(63.0001, 149)
+scale = Vector2(0.802711, 1)
+
+[node name="desk" type="TextureRect" parent="."]
+offset_right = 1411.0
+offset_bottom = 786.0
+scale = Vector2(0.816438, 0.824424)
+texture = ExtResource("1_ovnt1")
+script = ExtResource("2_x0q6g")
+
+[node name="outbox" parent="desk" instance=ExtResource("1_hqi4e")]
+position = Vector2(1082.75, 327.502)
+scale = Vector2(1.00069, 0.709586)
 boxImage = ExtResource("2_o26h4")
 
+[node name="inbox" parent="desk" instance=ExtResource("1_hqi4e")]
+position = Vector2(814.514, 335.993)
+scale = Vector2(1.00069, 0.709586)
+boxImage = ExtResource("2_mhtu6")
+
+[node name="DeskStuff" type="Sprite2D" parent="."]
+position = Vector2(527, 208)
+scale = Vector2(0.783076, 0.7936)
+texture = ExtResource("6_y3hdv")
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(578, 334)
+position = Vector2(576.001, 716.001)
+script = ExtResource("9_rx6um")
 
 [node name="paper_manager" type="Node" parent="."]
 script = ExtResource("3_vffcs")
 
 [node name="paper_button" parent="paper_manager" instance=ExtResource("5_3s8ee")]
+offset_left = 486.0
+offset_top = 349.0
+offset_right = 1074.0
+offset_bottom = 1105.0
 
 [node name="paper_button2" parent="paper_manager" instance=ExtResource("5_3s8ee")]
-offset_left = 388.0
-offset_top = 317.0
-offset_right = 976.0
-offset_bottom = 1073.0
+offset_left = 649.0
+offset_top = 448.0
+offset_right = 1237.0
+offset_bottom = 1204.0
 
 [connection signal="child_entered_tree" from="paper_manager" to="paper_manager" method="_on_child_entered_tree"]

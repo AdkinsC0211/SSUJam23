@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://5oa5esx70ju5"]
+
+[ext_resource type="Texture2D" uid="uid://bax70h032sjx1" path="res://ui_elements/center_closed_face.png" id="1_hw6sb"]
+[ext_resource type="Script" path="res://scenes/center_drawer.gd" id="1_ru8na"]
+[ext_resource type="Texture2D" uid="uid://byg3ffhfttcl3" path="res://ui_elements/center_open.png" id="2_1sv5y"]
+
+[node name="drawer_root" type="Node2D"]
+scale = Vector2(0.802711, 1)
+script = ExtResource("1_ru8na")
+
+[node name="close_face" type="TextureRect" parent="."]
+offset_left = -281.0
+offset_top = -160.0
+offset_right = 332.0
+offset_bottom = -96.0
+texture = ExtResource("1_hw6sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="face_button" type="TextureButton" parent="close_face"]
+offset_left = -0.546021
+offset_right = 39.454
+offset_bottom = 40.0
+scale = Vector2(15.3308, 1.5971)
+
+[node name="drawer_papers" type="Node" parent="."]
+
+[node name="open_face" type="TextureRect" parent="."]
+visible = false
+offset_left = -377.471
+offset_top = -245.0
+offset_right = 421.529
+offset_bottom = 196.0
+texture = ExtResource("2_1sv5y")
+metadata/_edit_use_anchors_ = true
+
+[node name="open_face_button" type="TextureButton" parent="open_face"]
+layout_mode = 0
+offset_left = 71.7842
+offset_top = 340.0
+offset_right = 111.784
+offset_bottom = 380.0
+scale = Vector2(16.9119, 1.28511)
+
+[connection signal="pressed" from="close_face/face_button" to="." method="_on_face_button_pressed"]
+[connection signal="pressed" from="open_face/open_face_button" to="." method="_on_open_face_button_pressed"]
