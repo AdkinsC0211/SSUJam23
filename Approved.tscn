@@ -34,7 +34,6 @@ button_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 29.5)
-scale = Vector2(0.186305, 0.166073)
 shape = SubResource("CircleShape2D_cck42")
 
 [connection signal="pressed" from="Sprite2D/Button1" to="." method="_on_button_pressed"]

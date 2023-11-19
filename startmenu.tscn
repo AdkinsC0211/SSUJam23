@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b6ckanekd0h77" path="res://button_Start.png" id="3_jxhcd"]
 [ext_resource type="Texture2D" uid="uid://djocsyclw3gkq" path="res://buttonCredits.png" id="4_xa27h"]
 [ext_resource type="Texture2D" uid="uid://bjnrmnu65dbp6" path="res://button_Quit.png" id="5_1hmew"]
-[ext_resource type="PackedScene" uid="uid://dcqyjtluukubr" path="res://volume_slider.tscn" id="6_o1gwk"]
+[ext_resource type="PackedScene" path="res://volume_slider.tscn" id="6_o1gwk"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_nrvxs")

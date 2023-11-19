@@ -20,7 +20,7 @@ func _ready():
 	front_section.texture = front_texture
 	lawpaper = $/root/desk_root/book_manager/lawpaper
 	notepaper = $/root/desk_root/book_manager/notepaper
-	logpaper = $/root/desk_root/book_manager/logpaper
+#	logpaper = $/root/desk_root/book_manager/logpaper
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

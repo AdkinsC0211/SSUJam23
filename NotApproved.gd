@@ -19,9 +19,9 @@ func _process(_delta):
 	
 	if Input.is_action_just_pressed("LMB") and picked_up:
 		var highest = null
-		var height_index = 99999999
+		var height_index = -1
 		for i in $Area2D.get_overlapping_areas():
-			if i.get_parent().get_index() < height_index and i.get_parent().is_in_group("paper"):
+			if i.get_parent().get_index() > height_index and i.get_parent().is_in_group("paper"):
 				height_index = i.get_parent().get_index()
 				highest = i.get_parent()
 		if highest != null:

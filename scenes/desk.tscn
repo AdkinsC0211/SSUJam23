@@ -81,11 +81,6 @@ position = Vector2(814.514, 335.993)
 scale = Vector2(1.00069, 0.709586)
 boxImage = ExtResource("2_mhtu6")
 
-[node name="shredder" parent="desk" instance=ExtResource("1_hqi4e")]
-position = Vector2(1110.92, 485.188)
-scale = Vector2(-1.81307, 0.561434)
-skew = -1.2514
-
 [node name="paper_manager" type="Node" parent="."]
 script = ExtResource("3_vffcs")
 
