@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://6qbyc6yv27ix"]
+
+[ext_resource type="Script" path="res://scenes/End_of_Day.gd" id="1_4p3q3"]
+[ext_resource type="Texture2D" uid="uid://dk60q4paw5eyj" path="res://background.png" id="1_nl3pn"]
+[ext_resource type="Texture2D" uid="uid://dbe6v12wg5db0" path="res://End_oof_Day.png" id="2_6by4e"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_4p3q3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nl3pn")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_6by4e")
+
+[node name="Correct" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Correct ="
+horizontal_alignment = 1
+
+[node name="Wrong" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Wrong = "
+horizontal_alignment = 1

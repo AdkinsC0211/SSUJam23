@@ -2,6 +2,8 @@ extends "res://scripts/paper_button_version.gd"
 
 var approved = -1
 var target_approved = 0
+var taken_money
+var target_amount
 var story = ""
 
 var form_details = Form.new()
@@ -12,4 +14,4 @@ func fill_form(new_form:Form):
 	$Org.text = "Organization / Company: " + new_form.organization
 	$Amnt.text = "Requested Amount: " + new_form.amount
 	$Reason.text = "Reason for Request: " + new_form.reason
-	$Details.text = "Further Details:\n" + new_form.details
+	$Details.text = "Further Details: " + new_form.details
