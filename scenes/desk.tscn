@@ -56,7 +56,6 @@ back_texture = ExtResource("15_innif")
 front_texture = ExtResource("16_slmwq")
 
 [node name="center_drawer" parent="desk_base_root" instance=ExtResource("15_arkyy")]
-visible = false
 position = Vector2(63.0001, 149)
 scale = Vector2(0.802711, 1)
 

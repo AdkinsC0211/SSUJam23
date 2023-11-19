@@ -25,6 +25,7 @@ scale = Vector2(15.3308, 1.5971)
 [node name="drawer_papers" type="Node" parent="."]
 
 [node name="open_face" type="TextureRect" parent="."]
+visible = false
 offset_left = -377.471
 offset_top = -245.0
 offset_right = 421.529
