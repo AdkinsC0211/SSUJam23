@@ -47,10 +47,9 @@ texture_normal = ExtResource("3_qv717")
 
 [node name="front_section" type="TextureRect" parent="."]
 offset_left = -229.0
-offset_top = -23.0
 offset_right = 252.0
-offset_bottom = 399.0
-scale = Vector2(0.996778, 0.981255)
+offset_bottom = 422.0
+scale = Vector2(0.984808, 0.867294)
 texture = ExtResource("2_4vu6x")
 metadata/_edit_use_anchors_ = true
 
