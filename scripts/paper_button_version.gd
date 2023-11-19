@@ -40,7 +40,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if held:
+	if held and !reading_mode:
 		self.set_rotation_degrees(0)
 		global_position = get_global_mouse_position() - grab_offset
 		overlapping_areas = body_area.get_overlapping_areas()
@@ -68,6 +68,8 @@ func update_paper_order():
 func _on_pressed():
 	if Input.is_action_pressed("left_mouse"):
 		reading_mode = !reading_mode
+		layer = 0
+		layer_update.emit()
 		if self.get_parent().get_name() == desk_paper_manager_label:
 			if reading_mode:
 				#global_position = $/root/desk_root/Camera2D.global_position
@@ -75,19 +77,25 @@ func _on_pressed():
 				global_position = Vector2(300,0)
 				self.scale.x = .9
 				self.scale.y = .85
+				$"/root/Singleton".play_sound("paper flip")
 			elif !reading_mode:
 				self.scale.x = .2
 				self.scale.y = .2
 				global_position = spot
+				$"/root/Singleton".play_sound("page down")
 			
 	elif Input.is_action_just_pressed("right_mouse"):
-		held = !held
+		if !reading_mode:
+			held = !held
 		if held and self.get_parent().get_name() != desk_paper_manager_label:
 			self.reparent(desk_paper_manager)
 		layer_update.emit()
-		if held:
+		if held and !reading_mode:
+			$"/root/Singleton".play_sound("page up")
 			grab_offset.x = get_global_mouse_position().x - self.global_position.x
 			grab_offset.y = get_global_mouse_position().y - self.global_position.y
+		elif !reading_mode:
+			$"/root/Singleton".play_sound("page down")
 	
 
 
@@ -101,5 +109,3 @@ func _on_mouse_exited():
 	if !reading_mode:
 		self.scale.x = .2
 		self.scale.y = .2
-
-

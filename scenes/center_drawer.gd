@@ -19,7 +19,9 @@ func _process(_delta):
 func _on_face_button_pressed():
 	close_face.visible = false
 	open_face.visible = true
+	$"/root/Singleton".play_sound("drawer open")
 
 func _on_open_face_button_pressed():
 	close_face.visible = true
 	open_face.visible = false
+	$"/root/Singleton".play_sound("drawer close")

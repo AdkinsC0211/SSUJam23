@@ -1,8 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://b5xehrpjkp1xg"]
+[gd_scene load_steps=24 format=3 uid="uid://b5xehrpjkp1xg"]
 
 [ext_resource type="PackedScene" uid="uid://cv5nug7hiif8w" path="res://scenes/mailbox.tscn" id="1_hqi4e"]
 [ext_resource type="Texture2D" uid="uid://w4evknifcup6" path="res://ui_elements/office_background.png" id="1_jmphy"]
-[ext_resource type="Texture2D" uid="uid://dio67fqrs822p" path="res://ui_elements/desk_top.png" id="1_ovnt1"]
+[ext_resource type="Texture2D" uid="uid://cofe11b7uj8cw" path="res://ui_elements/desk_top.png" id="1_ovnt1"]
 [ext_resource type="Texture2D" uid="uid://b8uatjkiyj1if" path="res://ui_elements/inbox.png" id="2_mhtu6"]
 [ext_resource type="PackedScene" uid="uid://bamhei43b1uap" path="res://scenes/desk_base.tscn" id="2_o8h0e"]
 [ext_resource type="Texture2D" uid="uid://ddlikxn0pvb3v" path="res://ui_elements/outbox.png" id="2_o26h4"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cc5rebetshisv" path="res://scenes/top_right_drawer.tscn" id="3_1o8jv"]
 [ext_resource type="Script" path="res://scripts/layer_manager.gd" id="3_vffcs"]
 [ext_resource type="PackedScene" uid="uid://bgvgt8amaiy37" path="res://scenes/paper_button.tscn" id="5_3s8ee"]
-[ext_resource type="Texture2D" uid="uid://cixrek0jslwhs" path="res://ui_elements/desk_stuff.png" id="6_y3hdv"]
+[ext_resource type="Texture2D" uid="uid://88ymkrlqq2a3" path="res://ui_elements/desk_stuff.png" id="6_y3hdv"]
 [ext_resource type="Script" path="res://scripts/camera_move.gd" id="9_rx6um"]
 [ext_resource type="Texture2D" uid="uid://cyjv30ei02xur" path="res://ui_elements/right_bot_open_back.png" id="12_esjvo"]
 [ext_resource type="Texture2D" uid="uid://dml0miitkbpid" path="res://ui_elements/right_bot_open_front.png" id="13_6va6b"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://dpbbl822217aj" path="res://ui_elements/left_drawer_open_back.png" id="15_innif"]
 [ext_resource type="Texture2D" uid="uid://ujfwwdvudt21" path="res://ui_elements/right_top_open_front.png" id="15_mms6g"]
 [ext_resource type="Texture2D" uid="uid://5c6djd0blaix" path="res://ui_elements/left_drawer_open_front.png" id="16_slmwq"]
+[ext_resource type="AudioStream" uid="uid://bllyudt5px2bt" path="res://sounds/room tone.wav" id="22_mtndd"]
+[ext_resource type="Script" path="res://scenes/LanternASMR.gd" id="23_qdsv8"]
 
 [node name="desk_root" type="Node2D"]
 scale = Vector2(0.999999, 0.999999)
@@ -96,5 +98,14 @@ offset_left = 649.0
 offset_top = 448.0
 offset_right = 1237.0
 offset_bottom = 1204.0
+
+[node name="RoomTone" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_mtndd")
+autoplay = true
+
+[node name="LanternASMR" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_mtndd")
+autoplay = true
+script = ExtResource("23_qdsv8")
 
 [connection signal="child_entered_tree" from="paper_manager" to="paper_manager" method="_on_child_entered_tree"]
