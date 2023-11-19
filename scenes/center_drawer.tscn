@@ -17,6 +17,7 @@ texture = ExtResource("1_hw6sb")
 metadata/_edit_use_anchors_ = true
 
 [node name="face_button" type="TextureButton" parent="close_face"]
+layout_mode = 0
 offset_left = -0.546021
 offset_right = 39.454
 offset_bottom = 40.0

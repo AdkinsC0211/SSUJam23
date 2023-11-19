@@ -32,7 +32,6 @@ texture = ExtResource("1_jmphy")
 
 [node name="desk_base_root" parent="." instance=ExtResource("2_o8h0e")]
 position = Vector2(435, 630.001)
-scale = Vector2(1, 1)
 
 [node name="bot_right_drawer" parent="desk_base_root" instance=ExtResource("13_dkv5e")]
 visible = false
@@ -51,13 +50,11 @@ front_texture = ExtResource("15_mms6g")
 [node name="left_drawer" parent="desk_base_root" instance=ExtResource("14_oeqsk")]
 visible = false
 position = Vector2(-293, 96.0002)
-scale = Vector2(0.815056, 0.501697)
 back_texture = ExtResource("15_innif")
 front_texture = ExtResource("16_slmwq")
 
 [node name="center_drawer" parent="desk_base_root" instance=ExtResource("15_arkyy")]
 position = Vector2(63.0001, 149)
-scale = Vector2(0.802711, 1)
 
 [node name="desk" type="TextureRect" parent="."]
 offset_right = 1411.0
