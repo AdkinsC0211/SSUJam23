@@ -39,7 +39,7 @@ func _process(_delta):
 				if i.get("approved")==-1 or i.get("approved")==null:
 					temp = false
 			if temp:
-				get_tree().change_scene_to_file("res://credits.tscn")
+				$"/root/Singleton".analyze_forms()
 
 func _on_area_2d_mouse_entered():
 	in_a_box = true

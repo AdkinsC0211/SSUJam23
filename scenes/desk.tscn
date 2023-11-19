@@ -75,6 +75,7 @@ script = ExtResource("2_x0q6g")
 position = Vector2(1082.75, 327.502)
 scale = Vector2(1.00069, 0.709586)
 boxImage = ExtResource("2_o26h4")
+outbox = true
 
 [node name="inbox" parent="desk" instance=ExtResource("1_hqi4e")]
 position = Vector2(814.514, 335.993)
