@@ -19,14 +19,9 @@ func _process(_delta):
 
 func _on_left_drawer_button_pressed():
 	left_drawer.visible = true
-	
-
 
 func _on_top_right_drawer_button_pressed():
 	top_right_drawer.visible = true
-	
-	
-
 
 func _on_bot_right_drawer_button_pressed():
 	bot_right_drawer.visible = true

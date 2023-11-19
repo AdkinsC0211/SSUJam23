@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj5olaodwrpkw"]
+[gd_scene load_steps=3 format=3 uid="uid://diqftdifigdy6"]
 
 [ext_resource type="Texture2D" uid="uid://ch1a82e8ah2ra" path="res://Lawbook_Cover.png" id="1_58qk2"]
 [ext_resource type="Script" path="res://lawcover.gd" id="2_45ky0"]

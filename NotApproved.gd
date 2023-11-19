@@ -5,7 +5,7 @@ signal mouse_released
 var picked_up: bool = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if picked_up:
 		global_position = get_global_mouse_position()
 		
