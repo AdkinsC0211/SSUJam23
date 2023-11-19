@@ -1,13 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdxy1xmvluyuy"]
+[gd_scene load_steps=9 format=3 uid="uid://bnm0vfobh3gai"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_h50bj"]
 [ext_resource type="PackedScene" uid="uid://ckcfdicn236ey" path="res://NotApproved.tscn" id="2_88a4w"]
-[ext_resource type="PackedScene" uid="uid://b1tp0y8uf1iym" path="res://background.tscn" id="2_ceadc"]
-[ext_resource type="PackedScene" uid="uid://bj5olaodwrpkw" path="res://lawcover.tscn" id="3_2mam6"]
+[ext_resource type="PackedScene" path="res://background.tscn" id="2_ceadc"]
+[ext_resource type="PackedScene" uid="uid://diqftdifigdy6" path="res://lawcover.tscn" id="3_2mam6"]
 [ext_resource type="PackedScene" uid="uid://btiy6ij80l11g" path="res://Approved.tscn" id="3_g4pfi"]
-[ext_resource type="PackedScene" uid="uid://djbiq1ds7acbd" path="res://notecover.tscn" id="4_3qsro"]
-[ext_resource type="PackedScene" uid="uid://ltvljds2ii0s" path="res://stampg.tscn" id="4_aofoh"]
-[ext_resource type="PackedScene" uid="uid://q44wsu13x3se" path="res://rstamp.tscn" id="6_x5yhf"]
+[ext_resource type="PackedScene" path="res://notecover.tscn" id="4_3qsro"]
+[ext_resource type="PackedScene" uid="uid://cg7meog6v4o26" path="res://stampg.tscn" id="4_aofoh"]
+[ext_resource type="PackedScene" path="res://rstamp.tscn" id="6_x5yhf"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h50bj")

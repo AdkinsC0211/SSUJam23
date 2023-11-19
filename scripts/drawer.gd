@@ -11,7 +11,7 @@ var drawer_paper_manager
 func _ready():
 	back_section = $back_section
 	front_section = $front_section
-	drawer_paper_manager = $drawer_papers
+	#drawer_paper_manager = $drawer_papers
 	
 	#call_deferred("load_textures")
 	back_section.texture = back_texture
@@ -24,8 +24,27 @@ func _process(_delta):
 
 func _on_drawer_button_pressed():
 	self.visible = false
+
 	$"/root/Singleton".play_sound("drawer close")
+
+	if self.get_name() == "bot_right_drawer":
+		get_node("dragon_pose1").visible = false
+		get_node("dragon_pose2").visible = false
+		get_node("dragon_pose3").visible = false
+
 	
 func load_textures():
 	back_texture = back_section.texture
 	front_texture = front_section.texture
+
+
+	
+func _on_laws_book_pressed():
+	get_tree().change_scene_to_file("res://lawpaper.tscn")
+	
+func _on_logs_book_pressed():
+	pass
+
+
+func _on_note_book_pressed():
+	get_tree().change_scene_to_file("res://notepaper.tscn")

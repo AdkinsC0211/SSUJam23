@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bamhei43b1uap"]
 
+[ext_resource type="Script" path="res://scripts/desk_base.gd" id="1_a3tfi"]
 [ext_resource type="Texture2D" uid="uid://dvs2ft26kk5ng" path="res://ui_elements/desk_base.png" id="1_litep"]
-[ext_resource type="Script" path="res://scenes/desk_base.gd" id="1_qiybj"]
 
 [node name="desk_base_root" type="Node2D"]
-script = ExtResource("1_qiybj")
+script = ExtResource("1_a3tfi")
 
 [node name="desk_base" type="TextureRect" parent="."]
 offset_left = -473.0

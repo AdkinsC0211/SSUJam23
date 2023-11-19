@@ -61,8 +61,9 @@ front_texture = ExtResource("16_slmwq")
 position = Vector2(63.0001, 149)
 
 [node name="desk" type="TextureRect" parent="."]
+offset_top = -25.0
 offset_right = 1411.0
-offset_bottom = 786.0
+offset_bottom = 761.0
 scale = Vector2(0.816438, 0.824424)
 texture = ExtResource("1_ovnt1")
 script = ExtResource("2_x0q6g")

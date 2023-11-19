@@ -17,7 +17,7 @@ func _ready():
 	#notes = $notes
 	#rulebook = $lawbook
 	
-func _process(delta):
+func _process(_delta):
 		
 	if stamper != null:
 		if Input.is_action_just_pressed("MMB") && stamper.picked_up:
