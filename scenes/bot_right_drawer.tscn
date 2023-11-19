@@ -31,19 +31,16 @@ metadata/_edit_use_anchors_ = true
 [node name="dragon_pose1" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-24.1157, 104.517)
-scale = Vector2(1, 1)
 texture = ExtResource("4_14kas")
 
 [node name="dragon_pose2" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-24.1157, 104.517)
-scale = Vector2(1, 1)
 texture = ExtResource("5_djn76")
 
 [node name="dragon_pose3" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-22.7759, 106.527)
-scale = Vector2(1, 1)
 texture = ExtResource("6_ggfvo")
 
 [node name="drawer_button" type="TextureButton" parent="."]
