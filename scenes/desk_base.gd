@@ -10,7 +10,6 @@ func _ready():
 	top_right_drawer = $/root/desk_root/desk_base_root/top_right_drawer
 	bot_right_drawer = $/root/desk_root/desk_base_root/bot_right_drawer
 	
-	print(left_drawer.get_name())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,13 +18,11 @@ func _process(_delta):
 
 
 func _on_left_drawer_button_pressed():
-	print("left drawer opening")
 	left_drawer.visible = true
 	
 
 
 func _on_top_right_drawer_button_pressed():
-	print("fuck")
 	top_right_drawer.visible = true
 	
 	
