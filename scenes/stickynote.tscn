@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://hkfwvir1cfak"]
+
+[ext_resource type="Script" path="res://scenes/stickynote.gd" id="1_l35x8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ky74r"]
+size = Vector2(220, 85)
+
+[node name="StickyNote" type="Node2D"]
+script = ExtResource("1_l35x8")
+
+[node name="TextureButton" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-25, -66)
+shape = SubResource("RectangleShape2D_ky74r")
