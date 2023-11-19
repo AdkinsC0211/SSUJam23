@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7empouarx8pc"]
+
+[ext_resource type="Texture2D" uid="uid://ctw7d2hc7jmr7" path="res://Form_Paper.png" id="1_3pm7t"]
+[ext_resource type="Script" path="res://form/form.gd" id="2_se8ty"]
+[ext_resource type="FontFile" uid="uid://e2ara1xueunr" path="res://ui_elements/IMFeENrm29P.ttf" id="3_7n2a0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pno0j"]
+size = Vector2(19.9792, 20.0772)
+
+[node name="form" type="TextureButton"]
+offset_right = 588.0
+offset_bottom = 756.0
+scale = Vector2(0.2, 0.2)
+action_mode = 0
+button_mask = 3
+texture_normal = ExtResource("1_3pm7t")
+script = ExtResource("2_se8ty")
+paper_texture = ExtResource("1_3pm7t")
+metadata/_edit_use_anchors_ = true
+
+[node name="paper_area" type="Area2D" parent="."]
+scale = Vector2(0.977572, 1.00309)
+
+[node name="paper_collider" type="CollisionShape2D" parent="paper_area"]
+position = Vector2(299.191, 373.936)
+scale = Vector2(29.9502, 37.2497)
+shape = SubResource("RectangleShape2D_pno0j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 120.0
+offset_right = 555.0
+offset_bottom = 560.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.454902, 0.337255, 0.180392, 1)
+theme_override_fonts/normal_font = ExtResource("3_7n2a0")
+theme_override_font_sizes/normal_font_size = 20
+text = "Name: Cecily Baker
+Organization/Company: Gnome's Gourmet Grainery
+Requested Amount: New bakery
+Reason for request: $
+Further Details:
+In the heart of our town, where the aroma of fresh pastries could dance upon the breeze, there lies a simple dream - the establishment of a new bakery. Picture, if thou will, a corner shop adorned with the warmth of ovens and the inviting scent of freshly baked delights. With a modest infusion from the treasury, the enterprising bakers of our town could turn this dream into a reality, offering daily bread and sweet confections to our townsfolk. It's not a matter of urgency, but rather a slow rise, akin to the yeasty magic within a well-prepared dough. Mayhap, in time, this bakery becomes a cherished gathering place for simple joys and the sharing of warm loaves among neighbors.
+"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 575.0
+offset_right = 570.0
+offset_bottom = 710.0
+theme_override_fonts/font = ExtResource("3_7n2a0")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "$XXX,XXX.XX"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
