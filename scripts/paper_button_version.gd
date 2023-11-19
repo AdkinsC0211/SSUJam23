@@ -37,7 +37,7 @@ func _ready():
 	outbox_manager = $/root/desk_root/desk/outbox/mailbox_area/paper_stack
 	outbox_label = outbox_manager.get_parent().get_parent().get_name()
 	
-	shredder_label = $/root/desk_root/desk/shredder.get_name()
+	#shredder_label = $/root/desk_root/desk/shredder.get_name()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,9 +57,9 @@ func _process(_delta):
 				parent = self.get_parent()
 				return
 				
-			if object.get_parent().get_name() == shredder_label:
-				queue_free()
-				return
+			#if object.get_parent().get_name() == shredder_label:
+			#	queue_free()
+			#	return
 				
 			if object.get_parent().get_name() == inbox_label:
 				self.reparent(inbox_manager)
