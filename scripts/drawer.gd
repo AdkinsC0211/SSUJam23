@@ -24,6 +24,7 @@ func _process(_delta):
 
 func _on_drawer_button_pressed():
 	self.visible = false
+	$"/root/Singleton".play_sound("drawer close")
 	
 func load_textures():
 	back_texture = back_section.texture
