@@ -11,6 +11,7 @@ var inbox_manager
 var inbox_label
 var outbox_manager
 var outbox_label
+var shredder_label
 var layer = 0
 var overlapping_areas: Array
 var body_area
@@ -32,8 +33,11 @@ func _ready():
 	
 	inbox_manager = $/root/desk_root/desk/inbox/mailbox_area/paper_stack
 	inbox_label = inbox_manager.get_parent().get_parent().get_name()
+	
 	outbox_manager = $/root/desk_root/desk/outbox/mailbox_area/paper_stack
 	outbox_label = outbox_manager.get_parent().get_parent().get_name()
+	
+	shredder_label = $/root/desk_root/desk/shredder.get_name()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,10 +55,17 @@ func _process(_delta):
 			if object.get_parent().get_name() == outbox_label:
 				self.reparent(outbox_manager)
 				parent = self.get_parent()
+				return
+				
+			if object.get_parent().get_name() == shredder_label:
+				queue_free()
+				return
 				
 			if object.get_parent().get_name() == inbox_label:
 				self.reparent(inbox_manager)
 				parent = self.get_parent()
+				return
+
 
 
 
@@ -69,7 +80,6 @@ func _on_pressed():
 			reading_mode = !reading_mode
 		if self.get_parent().get_name() == desk_paper_manager_label:
 			if reading_mode:
-				#global_position = $/root/desk_root/Camera2D.global_position
 				spot = self.global_position
 				global_position = Vector2(300,0)
 				self.scale.x = .9
