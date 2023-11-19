@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://ujfwwdvudt21" path="res://ui_elements/right_top_open_front.png" id="15_mms6g"]
 [ext_resource type="Texture2D" uid="uid://5c6djd0blaix" path="res://ui_elements/left_drawer_open_front.png" id="16_slmwq"]
 [ext_resource type="AudioStream" uid="uid://bllyudt5px2bt" path="res://sounds/room tone.wav" id="22_mtndd"]
-[ext_resource type="Script" path="res://scenes/LanternASMR.gd" id="23_qdsv8"]
+[ext_resource type="Script" path="res://scripts/LanternASMR.gd" id="23_y3eq6"]
 [ext_resource type="PackedScene" uid="uid://btiy6ij80l11g" path="res://Approved.tscn" id="24_pepo3"]
 [ext_resource type="PackedScene" uid="uid://ckcfdicn236ey" path="res://NotApproved.tscn" id="25_hyexi"]
 
@@ -61,8 +61,9 @@ front_texture = ExtResource("16_slmwq")
 position = Vector2(63.0001, 149)
 
 [node name="desk" type="TextureRect" parent="."]
+offset_top = -25.0
 offset_right = 1411.0
-offset_bottom = 786.0
+offset_bottom = 761.0
 scale = Vector2(0.816438, 0.824424)
 texture = ExtResource("1_ovnt1")
 script = ExtResource("2_x0q6g")
@@ -71,7 +72,6 @@ script = ExtResource("2_x0q6g")
 position = Vector2(1082.75, 327.502)
 scale = Vector2(1.00069, 0.709586)
 boxImage = ExtResource("2_o26h4")
-outbox = true
 
 [node name="inbox" parent="desk" instance=ExtResource("1_hqi4e")]
 position = Vector2(814.514, 335.993)
@@ -109,7 +109,7 @@ autoplay = true
 [node name="LanternASMR" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_mtndd")
 autoplay = true
-script = ExtResource("23_qdsv8")
+script = ExtResource("23_y3eq6")
 
 [node name="approved" parent="." instance=ExtResource("24_pepo3")]
 position = Vector2(168, 445)
