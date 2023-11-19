@@ -60,9 +60,9 @@ func _process(_delta):
 
 func update_paper_order():
 	for child in parent.get_children():
-		if child.held == true:
+		if child.get("held")!=null and child.get("held") == true:
 			child.layer = 0
-		else:
+		elif child.get("held")!=null:
 			child.layer -= 1
 
 func _on_pressed():

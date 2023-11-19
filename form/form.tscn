@@ -15,6 +15,7 @@ action_mode = 0
 button_mask = 3
 texture_normal = ExtResource("3_b5tqh")
 script = ExtResource("2_rj7uj")
+paper_texture = ExtResource("3_b5tqh")
 metadata/_edit_use_anchors_ = true
 
 [node name="paper_area" type="Area2D" parent="."]
@@ -31,14 +32,16 @@ offset_left = 55.0
 offset_top = 120.0
 offset_right = 555.0
 offset_bottom = 560.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.454902, 0.337255, 0.180392, 1)
 theme_override_fonts/normal_font = ExtResource("3_axwsj")
-theme_override_font_sizes/normal_font_size = 25
-text = "Name: Owen Mercer
-Organization/Company: Serpent's Scale Forge
-Requested Amount: $$$
-Reason for request: Wyvern Pest Control
+theme_override_font_sizes/normal_font_size = 20
+text = "Name: 
+Organization/Company: 
+Requested Amount: 
+Reason for request: 
 Further Details:
-A colony of Wyverns has recently made a nest in my metal forge, hindering my ability to work. They sit on the coals all day and constantly get in the way. Some have even started hissing at me whenever I get close. They need to go. I need funds to get a group of adventures to take care of the wyverns so I may resume my work.
+
 "
 
 [node name="LineEdit" type="LineEdit" parent="."]

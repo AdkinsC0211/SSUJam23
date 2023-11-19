@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b5xehrpjkp1xg"]
+[gd_scene load_steps=26 format=3 uid="uid://b5xehrpjkp1xg"]
 
 [ext_resource type="PackedScene" uid="uid://cv5nug7hiif8w" path="res://scenes/mailbox.tscn" id="1_hqi4e"]
 [ext_resource type="Texture2D" uid="uid://w4evknifcup6" path="res://ui_elements/office_background.png" id="1_jmphy"]
@@ -23,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://5c6djd0blaix" path="res://ui_elements/left_drawer_open_front.png" id="16_slmwq"]
 [ext_resource type="AudioStream" uid="uid://bllyudt5px2bt" path="res://sounds/room tone.wav" id="22_mtndd"]
 [ext_resource type="Script" path="res://scenes/LanternASMR.gd" id="23_qdsv8"]
+[ext_resource type="PackedScene" uid="uid://btiy6ij80l11g" path="res://Approved.tscn" id="24_pepo3"]
+[ext_resource type="PackedScene" uid="uid://ckcfdicn236ey" path="res://NotApproved.tscn" id="25_hyexi"]
 
 [node name="desk_root" type="Node2D"]
 scale = Vector2(0.999999, 0.999999)
@@ -69,6 +71,7 @@ script = ExtResource("2_x0q6g")
 position = Vector2(1082.75, 327.502)
 scale = Vector2(1.00069, 0.709586)
 boxImage = ExtResource("2_o26h4")
+outbox = true
 
 [node name="inbox" parent="desk" instance=ExtResource("1_hqi4e")]
 position = Vector2(814.514, 335.993)
@@ -107,5 +110,11 @@ autoplay = true
 stream = ExtResource("22_mtndd")
 autoplay = true
 script = ExtResource("23_qdsv8")
+
+[node name="approved" parent="." instance=ExtResource("24_pepo3")]
+position = Vector2(168, 445)
+
+[node name="notapproved" parent="." instance=ExtResource("25_hyexi")]
+position = Vector2(292, 453)
 
 [connection signal="child_entered_tree" from="paper_manager" to="paper_manager" method="_on_child_entered_tree"]

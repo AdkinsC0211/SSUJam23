@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var boxImage: CompressedTexture2D
+@export var outbox = false
 
 var in_a_box = false
 var paper_manager
@@ -30,6 +31,15 @@ func _process(_delta):
 						paper_being_held = true
 				if !paper_being_held:
 					paper_manager.get_children()[-1].held = true
+	if outbox:
+		if $mailbox_area/paper_stack.get_child_count()>=$"/root/Singleton".forms:
+			print("yay!")
+			var temp = true
+			for i in $mailbox_area/paper_stack.get_children():
+				if i.get("approved")==-1 or i.get("approved")==null:
+					temp = false
+			if temp:
+				get_tree().change_scene_to_file("res://credits.tscn")
 
 func _on_area_2d_mouse_entered():
 	in_a_box = true
