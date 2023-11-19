@@ -21,9 +21,10 @@ func _process(delta):
 		global_transform.origin = get_global_mouse_position()
 	if Input.is_action_just_pressed("LMB") and held:
 		var highest = null
-		var height_index = 9999999
+		var height_index = -1
 		for i in $Area2D.get_overlapping_areas():
-			if i.get_parent().get_index() < height_index:
+			print(i.get_parent().get_index())
+			if i.get_parent().get_index() > height_index and i.get_parent().is_in_group("paper"):
 				height_index = i.get_parent().get_index()
 				highest = i.get_parent()
 		if highest != null:

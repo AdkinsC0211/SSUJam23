@@ -138,7 +138,7 @@ visible = false
 visible = false
 scale = Vector2(0.999999, 0.999999)
 
-[node name="Stickies" parent="." instance=ExtResource("28_bso38")]
+[node name="Stickies" parent="." groups=["paper"] instance=ExtResource("28_bso38")]
 position = Vector2(252, 685.001)
 
 [connection signal="child_entered_tree" from="paper_manager" to="paper_manager" method="_on_child_entered_tree"]
