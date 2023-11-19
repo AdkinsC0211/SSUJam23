@@ -24,9 +24,10 @@ func _process(_delta):
 
 func _on_drawer_button_pressed():
 	self.visible = false
-	get_node("dragon_pose1").visible = false
-	get_node("dragon_pose2").visible = false
-	get_node("dragon_pose3").visible = false
+	if self.get_name() == "bot_right_drawer":
+		get_node("dragon_pose1").visible = false
+		get_node("dragon_pose2").visible = false
+		get_node("dragon_pose3").visible = false
 	
 func load_textures():
 	back_texture = back_section.texture
