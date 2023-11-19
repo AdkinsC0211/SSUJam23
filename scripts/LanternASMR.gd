@@ -16,7 +16,7 @@ func _process(_delta):
 		do()
 
 func do():
-	await get_tree().create_timer(randf_range(0, 10)).timeout
+	await get_tree().create_timer(randf_range(0.01, 10)).timeout
 	var temp = randi_range(0, 2)
 	match temp:
 		0:

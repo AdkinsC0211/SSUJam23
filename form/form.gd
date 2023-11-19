@@ -1,11 +1,10 @@
 extends "res://scripts/paper_button_version.gd"
 
 var approved = -1
+var target_approved = 0
+var story = ""
 
 var form_details = Form.new()
-
-func _ready():
-	pass
 
 
 func fill_form(new_form:Form):

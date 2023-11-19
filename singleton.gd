@@ -28,3 +28,6 @@ func add_papers():
 func add_paper(document):
 	get_tree().get_root().find_child("inbox", true, false).add_child(document)
 	forms += 1
+
+func analyze_forms(outbox):
+	pass

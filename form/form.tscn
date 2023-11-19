@@ -95,6 +95,7 @@ offset_bottom = 710.0
 theme_override_fonts/font = ExtResource("3_axwsj")
 theme_override_font_sizes/font_size = 50
 placeholder_text = "$XXX,XXX.XX"
+virtual_keyboard_type = 2
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
