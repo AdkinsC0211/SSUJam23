@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://d37tqxmms7quk"]
+
+[ext_resource type="Texture2D" uid="uid://ctw7d2hc7jmr7" path="res://Form_Paper.png" id="1_evnr7"]
+[ext_resource type="Script" path="res://form/form.gd" id="2_3ycke"]
+[ext_resource type="FontFile" uid="uid://e2ara1xueunr" path="res://ui_elements/IMFeENrm29P.ttf" id="3_lhrj3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pno0j"]
+size = Vector2(19.9792, 20.0772)
+
+[node name="form" type="TextureButton"]
+offset_right = 588.0
+offset_bottom = 756.0
+scale = Vector2(0.2, 0.2)
+action_mode = 0
+button_mask = 3
+texture_normal = ExtResource("1_evnr7")
+script = ExtResource("2_3ycke")
+metadata/_edit_use_anchors_ = true
+
+[node name="paper_area" type="Area2D" parent="."]
+scale = Vector2(0.977572, 1.00309)
+
+[node name="paper_collider" type="CollisionShape2D" parent="paper_area"]
+position = Vector2(299.191, 373.936)
+scale = Vector2(29.9502, 37.2497)
+shape = SubResource("RectangleShape2D_pno0j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 120.0
+offset_right = 555.0
+offset_bottom = 560.0
+theme_override_fonts/normal_font = ExtResource("3_lhrj3")
+theme_override_font_sizes/normal_font_size = 25
+text = "Name: Tamsin Thatcher
+Organization/Company: Iron Crown Merchants
+Requested Amount: $$
+Reason for request: New Trade Ship
+Further Details:
+The vessels that ply the trade routes on behalf of our merchants guild have weathered the relentless tides and storms with admirable resilience. However, the time has come to chart a new course, embracing progress upon the vast expanse of the azure sea. With a judicious allocation of funds, we aspire to procure a new trade ship, a vessel of nautical prowess and commodious cargo space. This acquisition shall not only augment the efficiency of our maritime endeavors but also enhance the prestige of our esteemed merchants guild. Let the treasury be the wind in the sails of this venture, propelling us toward new horizons and prosperous trade relations across the briny depths."
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 575.0
+offset_right = 570.0
+offset_bottom = 710.0
+theme_override_fonts/font = ExtResource("3_lhrj3")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "$XXX,XXX.XX"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
