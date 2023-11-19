@@ -4,6 +4,10 @@ signal mouse_released
 
 var picked_up: bool = false
 var stamp = preload("res://stampg.tscn")
+var start_spot
+
+func _ready():
+	start_spot = global_position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -36,5 +40,6 @@ func _on_button_pressed():
 	if picked_up:
 		$"/root/Singleton".play_sound("stamp up")
 	else:
+		global_position = start_spot
 		$"/root/Singleton".play_sound("stamp down")
 	await mouse_released
