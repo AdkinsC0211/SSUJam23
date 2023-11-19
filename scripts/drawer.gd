@@ -6,17 +6,19 @@ extends Node2D
 var back_section
 var front_section
 var drawer_paper_manager 
+var lawpaper
+var notepaper
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	back_section = $back_section
 	front_section = $front_section
 	#drawer_paper_manager = $drawer_papers
-	
 	#call_deferred("load_textures")
 	back_section.texture = back_texture
 	front_section.texture = front_texture
-	
+	lawpaper = $/root/desk_root/book_manager/lawpaper
+	notepaper = $/root/desk_root/book_manager/notepaper
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -40,11 +42,11 @@ func load_textures():
 
 	
 func _on_laws_book_pressed():
-	get_tree().change_scene_to_file("res://lawpaper.tscn")
+	lawpaper.visible = true
 	
 func _on_logs_book_pressed():
 	pass
 
 
 func _on_note_book_pressed():
-	get_tree().change_scene_to_file("res://notepaper.tscn")
+	notepaper.visible = true
