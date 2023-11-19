@@ -7,20 +7,20 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_me0t1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="lawpaper" type="Sprite2D" parent="."]
 position = Vector2(577, 335)
 scale = Vector2(1.18811, 1.16135)
 texture = ExtResource("1_mcj8u")
 
-[node name="LawPage" type="ColorRect" parent="."]
-offset_left = 105.0
-offset_top = 65.0
-offset_right = 523.0
-offset_bottom = 642.0
+[node name="LawPage" type="ColorRect" parent="lawpaper"]
+offset_left = -397.27
+offset_top = -232.488
+offset_right = 20.7304
+offset_bottom = 344.512
 scale = Vector2(1.00229, 0.944845)
 color = Color(1, 1, 1, 0)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="LawPage"]
+[node name="VBoxContainer" type="VBoxContainer" parent="lawpaper/LawPage"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,7 +30,7 @@ offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="LawPage/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="lawpaper/LawPage/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.352941, 0.164706, 0.0117647, 1)
 theme_override_fonts/normal_font = ExtResource("3_67psn")
@@ -59,14 +59,14 @@ ___________________________________________________________
 -$2000"
 fit_content = true
 
-[node name="LawPage2" type="ColorRect" parent="."]
-offset_left = 659.0
-offset_top = 51.0
-offset_right = 1077.0
-offset_bottom = 628.0
+[node name="LawPage2" type="ColorRect" parent="lawpaper"]
+offset_left = 69.0172
+offset_top = -244.543
+offset_right = 487.017
+offset_bottom = 332.457
 color = Color(1, 1, 1, 0)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="LawPage2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="lawpaper/LawPage2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,7 +76,7 @@ offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="LawPage2/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="lawpaper/LawPage2/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.352941, 0.164706, 0.0117647, 1)
 theme_override_fonts/normal_font = ExtResource("3_67psn")
@@ -98,3 +98,15 @@ Magic Invovlved
 		* 1.5 original price
 "
 fit_content = true
+
+[node name="Button" type="Button" parent="lawpaper"]
+modulate = Color(0.686275, 0.0235294, 0.439216, 0.788235)
+offset_left = 302.161
+offset_top = 196.323
+offset_right = 347.161
+offset_bottom = 227.323
+scale = Vector2(1.6359, 1.52902)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Back"
+
+[connection signal="pressed" from="lawpaper/Button" to="." method="_on_button_pressed"]

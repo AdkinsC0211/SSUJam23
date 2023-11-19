@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b5xehrpjkp1xg"]
+[gd_scene load_steps=28 format=3 uid="uid://b5xehrpjkp1xg"]
 
 [ext_resource type="PackedScene" uid="uid://cv5nug7hiif8w" path="res://scenes/mailbox.tscn" id="1_hqi4e"]
 [ext_resource type="Texture2D" uid="uid://w4evknifcup6" path="res://ui_elements/office_background.png" id="1_jmphy"]
@@ -21,10 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://dpbbl822217aj" path="res://ui_elements/left_drawer_open_back.png" id="15_innif"]
 [ext_resource type="Texture2D" uid="uid://ujfwwdvudt21" path="res://ui_elements/right_top_open_front.png" id="15_mms6g"]
 [ext_resource type="Texture2D" uid="uid://5c6djd0blaix" path="res://ui_elements/left_drawer_open_front.png" id="16_slmwq"]
+[ext_resource type="PackedScene" uid="uid://c12ii24v0fy8t" path="res://notepaper.tscn" id="20_y8vwu"]
 [ext_resource type="AudioStream" uid="uid://bllyudt5px2bt" path="res://sounds/room tone.wav" id="22_mtndd"]
 [ext_resource type="Script" path="res://scripts/LanternASMR.gd" id="23_y3eq6"]
 [ext_resource type="PackedScene" uid="uid://btiy6ij80l11g" path="res://Approved.tscn" id="24_pepo3"]
 [ext_resource type="PackedScene" uid="uid://ckcfdicn236ey" path="res://NotApproved.tscn" id="25_hyexi"]
+[ext_resource type="PackedScene" uid="uid://dhdl2da8eg31a" path="res://lawpaper.tscn" id="26_6rnve"]
 
 [node name="desk_root" type="Node2D"]
 scale = Vector2(0.999999, 0.999999)
@@ -116,5 +118,14 @@ position = Vector2(168, 445)
 
 [node name="notapproved" parent="." instance=ExtResource("25_hyexi")]
 position = Vector2(292, 453)
+
+[node name="book_manager" type="Node" parent="."]
+
+[node name="notepaper" parent="book_manager" instance=ExtResource("20_y8vwu")]
+visible = false
+
+[node name="lawpaper" parent="book_manager" instance=ExtResource("26_6rnve")]
+visible = false
+scale = Vector2(0.999999, 0.999999)
 
 [connection signal="child_entered_tree" from="paper_manager" to="paper_manager" method="_on_child_entered_tree"]
