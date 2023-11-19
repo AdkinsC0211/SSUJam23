@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bamhei43b1uap"]
+
+[ext_resource type="Texture2D" uid="uid://dvs2ft26kk5ng" path="res://ui_elements/desk_base.png" id="1_litep"]
+[ext_resource type="Script" path="res://scenes/desk_base.gd" id="1_qiybj"]
+
+[node name="desk_base_root" type="Node2D"]
+script = ExtResource("1_qiybj")
+
+[node name="desk_base" type="TextureRect" parent="."]
+offset_left = -473.0
+offset_top = -164.0
+offset_right = 1056.0
+offset_bottom = 905.0
+scale = Vector2(0.792754, 0.502311)
+texture = ExtResource("1_litep")
+
+[node name="left_drawer_button" type="TextureButton" parent="."]
+offset_left = -377.0
+offset_top = -9.0
+offset_right = -337.0
+offset_bottom = 31.0
+scale = Vector2(5.9729, 7.30519)
+action_mode = 0
+
+[node name="top_right_drawer_button" type="TextureButton" parent="."]
+offset_left = 336.0
+offset_right = 376.0
+offset_bottom = 40.0
+scale = Vector2(7.37904, 1.67528)
+action_mode = 0
+
+[node name="bot_right_drawer_button" type="TextureButton" parent="."]
+offset_left = 340.0
+offset_top = 79.0
+offset_right = 380.0
+offset_bottom = 119.0
+scale = Vector2(7.21954, 5.17158)
+action_mode = 0
+
+[connection signal="pressed" from="left_drawer_button" to="." method="_on_left_drawer_button_pressed"]
+[connection signal="pressed" from="top_right_drawer_button" to="." method="_on_top_right_drawer_button_pressed"]
+[connection signal="pressed" from="bot_right_drawer_button" to="." method="_on_bot_right_drawer_button_pressed"]

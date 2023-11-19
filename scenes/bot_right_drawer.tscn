@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfr7laxmivpal"]
+
+[ext_resource type="Script" path="res://scripts/drawer.gd" id="1_5agsc"]
+[ext_resource type="Texture2D" uid="uid://cyjv30ei02xur" path="res://ui_elements/right_bot_open_back.png" id="1_qc17y"]
+[ext_resource type="Texture2D" uid="uid://dml0miitkbpid" path="res://ui_elements/right_bot_open_front.png" id="2_crnbx"]
+
+[node name="drawer_root" type="Node2D"]
+scale = Vector2(0.746403, 0.497526)
+script = ExtResource("1_5agsc")
+
+[node name="back_section" type="TextureRect" parent="."]
+offset_left = -287.0
+offset_top = -181.0
+offset_right = 188.0
+offset_bottom = 306.0
+scale = Vector2(1.01895, 0.993108)
+texture = ExtResource("1_qc17y")
+metadata/_edit_use_anchors_ = true
+
+[node name="drawer_papers" type="Node" parent="."]
+
+[node name="front_section" type="TextureRect" parent="."]
+offset_left = -270.0
+offset_top = -171.0
+offset_right = 253.0
+offset_bottom = 420.0
+texture = ExtResource("2_crnbx")
+metadata/_edit_use_anchors_ = true
+
+[node name="drawer_button" type="TextureButton" parent="."]
+offset_left = -170.149
+offset_top = -22.1094
+offset_right = -130.149
+offset_bottom = 17.8906
+scale = Vector2(10.1284, 10.451)
+action_mode = 0
+
+[connection signal="pressed" from="drawer_button" to="." method="_on_drawer_button_pressed"]

@@ -52,8 +52,6 @@ func _process(_delta):
 			if object.get_parent().get_name() == outbox_label:
 				self.reparent(outbox_manager)
 				
-			
-			
 			if object.get_parent().get_name() == inbox_label:
 				self.reparent(inbox_manager)
 
