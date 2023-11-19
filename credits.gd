@@ -9,8 +9,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("GoBack"):
+		$"/root/Singleton".play_sound("ui click")
 		get_tree().change_scene_to_file("res://startmenu.tscn")
 
 
 func _on_button_pressed():
+	$"/root/Singleton".play_sound("ui click")
 	get_tree().change_scene_to_file("res://Conner.tscn")

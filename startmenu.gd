@@ -17,6 +17,7 @@ func _on_button_pressed():
 
 
 func _on_credits_pressed():
+	$"/root/Singleton".play_sound("ui click")
 	get_tree().change_scene_to_file("res://credits.tscn")
 
 
