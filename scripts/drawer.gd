@@ -8,6 +8,7 @@ var front_section
 var drawer_paper_manager 
 var lawpaper
 var notepaper
+var logpaper
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +20,7 @@ func _ready():
 	front_section.texture = front_texture
 	lawpaper = $/root/desk_root/book_manager/lawpaper
 	notepaper = $/root/desk_root/book_manager/notepaper
+	logpaper = $/root/desk_root/book_manager/logpaper
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -45,8 +47,9 @@ func _on_laws_book_pressed():
 	lawpaper.visible = true
 	
 func _on_logs_book_pressed():
-	pass
+	logpaper.visible = true
 
 
 func _on_note_book_pressed():
+	
 	notepaper.visible = true
