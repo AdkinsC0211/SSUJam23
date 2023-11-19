@@ -26,23 +26,65 @@ position = Vector2(299.191, 373.936)
 scale = Vector2(29.9502, 37.2497)
 shape = SubResource("RectangleShape2D_pno0j")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Name" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 55.0
 offset_top = 120.0
 offset_right = 555.0
-offset_bottom = 560.0
+offset_bottom = 150.0
 mouse_filter = 1
 theme_override_colors/default_color = Color(0.454902, 0.337255, 0.180392, 1)
 theme_override_fonts/normal_font = ExtResource("3_axwsj")
 theme_override_font_sizes/normal_font_size = 20
-text = "Name: 
-Organization/Company: 
-Requested Amount: 
-Reason for request: 
-Further Details:
+text = "Name: "
 
-"
+[node name="Org" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 150.0
+offset_right = 555.0
+offset_bottom = 180.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.454902, 0.337255, 0.180392, 1)
+theme_override_fonts/normal_font = ExtResource("3_axwsj")
+theme_override_font_sizes/normal_font_size = 20
+text = "Organization/Company: "
+
+[node name="Amnt" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 175.0
+offset_right = 555.0
+offset_bottom = 205.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.454902, 0.337255, 0.180392, 1)
+theme_override_fonts/normal_font = ExtResource("3_axwsj")
+theme_override_font_sizes/normal_font_size = 20
+text = "Requested Amount: "
+
+[node name="Reason" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 200.0
+offset_right = 555.0
+offset_bottom = 230.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.454902, 0.337255, 0.180392, 1)
+theme_override_fonts/normal_font = ExtResource("3_axwsj")
+theme_override_font_sizes/normal_font_size = 20
+text = "Reason for Request: "
+
+[node name="Details" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 230.0
+offset_right = 555.0
+offset_bottom = 260.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.454902, 0.337255, 0.180392, 1)
+theme_override_fonts/normal_font = ExtResource("3_axwsj")
+theme_override_font_sizes/normal_font_size = 20
+text = "Further Details: "
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 0
