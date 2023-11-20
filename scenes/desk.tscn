@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cc5rebetshisv" path="res://scenes/top_right_drawer.tscn" id="3_1o8jv"]
 [ext_resource type="Script" path="res://scripts/layer_manager.gd" id="3_vffcs"]
 [ext_resource type="PackedScene" uid="uid://bgvgt8amaiy37" path="res://scenes/paper_button.tscn" id="5_3s8ee"]
-[ext_resource type="Texture2D" uid="uid://88ymkrlqq2a3" path="res://ui_elements/desk_stuff.png" id="6_y3hdv"]
+[ext_resource type="Texture2D" uid="uid://cixrek0jslwhs" path="res://ui_elements/desk_stuff.png" id="6_y3hdv"]
 [ext_resource type="Script" path="res://scripts/camera_move.gd" id="9_rx6um"]
 [ext_resource type="Texture2D" uid="uid://cyjv30ei02xur" path="res://ui_elements/right_bot_open_back.png" id="12_esjvo"]
 [ext_resource type="Texture2D" uid="uid://dml0miitkbpid" path="res://ui_elements/right_bot_open_front.png" id="13_6va6b"]

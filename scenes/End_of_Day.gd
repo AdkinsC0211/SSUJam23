@@ -5,6 +5,7 @@ var text
 func _ready():
 	$CenterContainer/VBoxContainer/Correct.text = "Forms Filed Correctly: " + str($"/root/Singleton".accept) + "/" + str($"/root/Singleton".forms)
 	$CenterContainer/VBoxContainer/Wrong.text = "Strikes Remaining: " + str($"/root/Singleton".strikes_left - $"/root/Singleton".strikes)
+	$CenterContainer/VBoxContainer/Stolen.text = "Stolen Funds: " + str($"/root/Singleton".stolen_funds)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

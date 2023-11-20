@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj5fsyp0gdgxc"]
+
+[ext_resource type="Texture2D" uid="uid://q4twguwx1jgh" path="res://ui_elements/paper.png" id="1_wvm8y"]
+[ext_resource type="Script" path="res://scripts/paper_button_version.gd" id="2_7olup"]
+[ext_resource type="FontFile" uid="uid://cawnbxkcrhod8" path="res://Victor's Font.ttf" id="3_pqmkl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pno0j"]
+size = Vector2(19.9792, 20.0772)
+
+[node name="paper_button" type="TextureButton"]
+offset_right = 588.0
+offset_bottom = 756.0
+scale = Vector2(0.2, 0.2)
+action_mode = 0
+button_mask = 3
+texture_normal = ExtResource("1_wvm8y")
+script = ExtResource("2_7olup")
+metadata/_edit_use_anchors_ = true
+
+[node name="paper_area" type="Area2D" parent="."]
+scale = Vector2(0.977572, 1.00309)
+
+[node name="paper_collider" type="CollisionShape2D" parent="paper_area"]
+position = Vector2(299.191, 373.936)
+scale = Vector2(29.9502, 37.2497)
+shape = SubResource("RectangleShape2D_pno0j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 70.0
+offset_right = 535.0
+offset_bottom = 695.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.501961, 0.333333, 0.196078, 1)
+theme_override_fonts/normal_font = ExtResource("3_pqmkl")
+theme_override_font_sizes/normal_font_size = 34
+text = "Dear Treasurekeeper, 
+	It has come to my attention that my daughter believes she can take our fine kingdom’s riches whenever she pleases. While I love her dearly, it just isn’t sustainable to allow her to continue down this path. I humbly request you deny any future requests that she may attempt.
+Yours truly, 
+King Aric Ironheart
+"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
