@@ -112,7 +112,7 @@ func add_papers():
 		temp.story="princess"
 		add_paper(temp)
 	elif princess_prog==11:
-		get_tree().change_scene_to_file("res://credits.tscn")     #go to end scene
+		get_tree().change_scene_to_file("res://scenes/end_scene.tscn")     #go to end scene
 	
 	if not king_skip:
 		var temp = load("res://form/form.tscn").instantiate()
@@ -133,8 +133,10 @@ func add_papers():
 			pass
 			#spawn letter corresponding to how many times you denied
 		else:
-			get_tree().change_scene_to_file("res://credits.tscn")
+			get_tree().change_scene_to_file("res://scenes/end_scene.tscn")
 			#once we have end screens thisll be the one where you die
+	if king_prog > 5:
+		get_tree().change_scene_to_file("res://scenes/end_scene.tscn")
 		
 		
 	if not captain_skip:
@@ -156,8 +158,10 @@ func add_papers():
 			pass
 			#spawn letter corresponding to how many times you denied
 		else:
-			get_tree().change_scene_to_file("res://credits.tscn")
+			get_tree().change_scene_to_file("res://scenes/end_scene.tscn")
 			#once we have end screens thisll be the one where you die
+	if captain_prog > 5:
+		get_tree().change_scene_to_file("res://scenes/end_scene.tscn")
 	
 
 
