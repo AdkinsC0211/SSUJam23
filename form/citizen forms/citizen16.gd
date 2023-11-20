@@ -1,6 +1,6 @@
-extends "res://form/form_template.gd"
+extends Form
 
-func _ready():
+func update_form():
 	alias = "Seraphina floatgad"
 	organization = "Celestial Healing Sanctum"
 	amount = "10,000"

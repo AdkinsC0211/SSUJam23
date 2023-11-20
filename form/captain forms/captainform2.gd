@@ -1,6 +1,6 @@
-extends "res://form/form_template.gd"
+extends Form
 
-func _ready():
+func update_form():
 	alias = "Captain Octavia Lifebane"
 	organization = "Royal Guard"
 	amount = "$1,500"

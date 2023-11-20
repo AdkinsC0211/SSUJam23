@@ -1,6 +1,6 @@
-extends "res://form/form_template.gd"
+extends Form
 
-func _ready():
+func update_form():
 	alias = "Thalgar Stonehammer"
 	organization = "Stone's Forge"
 	amount = "1100"

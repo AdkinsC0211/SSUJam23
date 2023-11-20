@@ -1,6 +1,6 @@
-extends "res://form/form_template.gd"
+extends Form
 
-func _ready():
+func update_form():
 	alias = "Lyra Shadowdancer"
 	organization = "Starlight Academy of Arcane Arts"
 	amount = "3000"

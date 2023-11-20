@@ -8,7 +8,7 @@ var max_amount = 0
 var will_return = false
 var story = ""
 
-var form_details = Form.new()
+
 
 
 func fill_form(new_form:Form):

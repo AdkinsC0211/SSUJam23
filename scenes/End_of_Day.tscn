@@ -60,3 +60,5 @@ horizontal_alignment = 1
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Next Day"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,6 +1,6 @@
-extends "res://form/form_template.gd"
+extends Form
 
-func _ready():
+func update_form():
 	alias = "King Aric Ironheart"
 	organization = "Kingdom of Eldrathia"
 	amount = "$1,000,000"
