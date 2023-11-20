@@ -47,7 +47,8 @@ func _on_laws_book_pressed():
 	lawpaper.visible = true
 	
 func _on_logs_book_pressed():
-	logpaper.visible = true
+	#logpaper.visible = true
+	pass
 
 
 func _on_note_book_pressed():
