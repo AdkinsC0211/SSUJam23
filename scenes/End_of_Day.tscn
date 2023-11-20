@@ -51,5 +51,12 @@ theme_override_font_sizes/font_size = 35
 text = "Wrong = "
 horizontal_alignment = 1
 
+[node name="Stolen" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Stolen Funds:"
+horizontal_alignment = 1
+
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+text = "Next Day"

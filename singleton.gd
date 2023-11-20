@@ -10,6 +10,8 @@ var strikes = 0
 var strikes_left = 5
 var max_forms = forms
 
+var stolen_funds = 0
+
 var princess_prog = 0
 var princess_skip = false
 var princess_denied = false
@@ -155,6 +157,9 @@ func analyze_forms(outbox):
 					var temp = v.get_node("LineEdit")
 					if int(temp.text) > (i.max_amount - i.target_amount) or (i.max_amount < int(i.get_node("LineEdit").text)):
 						strikes += 1
+						break
+					else:
+						stolen_funds += temp.text
 						break
 			if strike_counter==strikes:
 				accept += 1
