@@ -32,6 +32,7 @@ func _on_drawer_button_pressed():
 	$"/root/Singleton".play_sound("drawer close")
 
 	if self.get_name() == "bot_right_drawer":
+		$"/root/Singleton".play_sound("dragon chirp")
 		get_node("dragon_pose1").visible = false
 		get_node("dragon_pose2").visible = false
 		get_node("dragon_pose3").visible = false
@@ -45,6 +46,7 @@ func load_textures():
 	
 func _on_laws_book_pressed():
 	lawpaper.visible = true
+	$"/root/Singleton".play_sound("book up")
 	
 func _on_logs_book_pressed():
 	#logpaper.visible = true
@@ -52,5 +54,5 @@ func _on_logs_book_pressed():
 
 
 func _on_note_book_pressed():
-	
+	$"/root/Singleton".play_sound("book up")
 	notepaper.visible = true

@@ -23,6 +23,8 @@ var captain_prog = 1
 var captain_skip = true
 var captain_denied = 0
 var last_captain_denied = 0
+
+var queue = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_child(soundplayer)
@@ -30,11 +32,17 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if not soundplayer.playing and queue.size()>0:
+		soundplayer.stream = load("res://sounds/"+queue[0]+".wav")
+		queue.remove_at(0)
+		soundplayer.play()
 
 func play_sound(sound_name:String):
 	soundplayer.stream = load("res://sounds/"+sound_name+".wav")
 	soundplayer.play()
+
+func add_to_queue(sound_name):
+	queue.append(sound_name)
 
 func stop_sound():
 	soundplayer.stop()
