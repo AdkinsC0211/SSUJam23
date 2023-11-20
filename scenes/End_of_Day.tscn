@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://6qbyc6yv27ix"]
+[gd_scene load_steps=4 format=3 uid="uid://bdko6ytgtfphe"]
 
 [ext_resource type="Script" path="res://scenes/End_of_Day.gd" id="1_4p3q3"]
 [ext_resource type="Texture2D" uid="uid://dk60q4paw5eyj" path="res://background.png" id="1_nl3pn"]
@@ -41,10 +41,15 @@ texture = ExtResource("2_6by4e")
 
 [node name="Correct" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 35
 text = "Correct ="
 horizontal_alignment = 1
 
 [node name="Wrong" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 35
 text = "Wrong = "
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2

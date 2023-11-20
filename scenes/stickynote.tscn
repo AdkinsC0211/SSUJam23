@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ky74r"]
 size = Vector2(62, 21.5)
 
-[node name="StickyNote" type="Node2D"]
+[node name="StickyNote" type="Node2D" groups=["sticky"]]
 script = ExtResource("1_l35x8")
 
 [node name="TextureButton" type="Sprite2D" parent="."]

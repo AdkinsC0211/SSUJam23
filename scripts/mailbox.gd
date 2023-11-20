@@ -39,7 +39,7 @@ func _process(_delta):
 				if i.get("approved")==-1 or i.get("approved")==null:
 					temp = false
 			if temp:
-				$"/root/Singleton".analyze_forms()
+				$"/root/Singleton".analyze_forms($mailbox_area/paper_stack)
 
 func _on_area_2d_mouse_entered():
 	in_a_box = true
