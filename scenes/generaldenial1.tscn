@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://35w6abujkimx"]
+
+[ext_resource type="Texture2D" uid="uid://q4twguwx1jgh" path="res://ui_elements/paper.png" id="1_e5825"]
+[ext_resource type="Script" path="res://scripts/paper_button_version.gd" id="2_gplbq"]
+[ext_resource type="FontFile" uid="uid://deacysaro0807" path="res://NoviceWriterRegular-Regular.ttf" id="3_2fm2r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pno0j"]
+size = Vector2(19.9792, 20.0772)
+
+[node name="paper_button" type="TextureButton"]
+offset_right = 588.0
+offset_bottom = 756.0
+scale = Vector2(0.2, 0.2)
+action_mode = 0
+button_mask = 3
+texture_normal = ExtResource("1_e5825")
+script = ExtResource("2_gplbq")
+metadata/_edit_use_anchors_ = true
+
+[node name="paper_area" type="Area2D" parent="."]
+scale = Vector2(0.977572, 1.00309)
+
+[node name="paper_collider" type="CollisionShape2D" parent="paper_area"]
+position = Vector2(299.191, 373.936)
+scale = Vector2(29.9502, 37.2497)
+shape = SubResource("RectangleShape2D_pno0j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 70.0
+offset_right = 535.0
+offset_bottom = 695.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.501961, 0.333333, 0.196078, 1)
+theme_override_fonts/normal_font = ExtResource("3_2fm2r")
+theme_override_font_sizes/normal_font_size = 28
+text = "Do you not understand how important the Royal Guard is? To deny them a request is to allow outside forces to threaten our kingdom. The guard must be well supplied, regardless of what lies in the bank. Without the guard, there might as well be no bank.
+I highly suggest you accept our future requests.
+"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
