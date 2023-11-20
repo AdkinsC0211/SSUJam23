@@ -52,7 +52,7 @@ func add_papers():
 	elif princess_prog==2:
 		if princess_denied:
 			princess_denied=false
-			#plz spawn princess letter 1
+			get_tree().get_root().find_child("inbox", true, false).add_child(load("res://scenes/princessdenial1.tscn").instance())
 			var temp = load("res://form/form.tscn").instantiate()
 			temp.fill_form(load("res://form/princess forms/princessform1denied.gd"))
 			add_paper(temp)
@@ -65,7 +65,7 @@ func add_papers():
 		temp.fill_form(load("res://form/princess forms/princessform2.gd"))
 		add_paper(temp)
 	elif princess_prog==5:
-		#letter from king
+		get_tree().get_root().find_child("inbox", true, false).add_child(load("res://scenes/princesskingresponse1.tscn").instance())
 		princess_prog+=1
 	elif princess_prog==6:
 		var temp = load("res://form/form.tscn").instantiate()
@@ -74,17 +74,17 @@ func add_papers():
 	elif princess_prog==7:
 		if princess_denied:
 			princess_prog+=1
-			#denial letter from princess
+			get_tree().get_root().find_child("inbox", true, false).add_child(load("res://scenes/princessdenial2.tscn").instance())
 		else:
 			princess_prog+=1
-			#acceptance letter from king
+			get_tree().get_root().find_child("inbox", true, false).add_child(load("res://scenes/princesskingresponse2.tscn").instance())
 	elif princess_prog==8:
 		var temp = load("res://form/form.tscn").instantiate()
 		temp.fill_form(load("res://form/princess forms/princessform4.gd"))
 		add_paper(temp)
 	elif princess_prog==9:
 		if not princess_denied:
-			#runaway letter
+			get_tree().get_root().find_child("inbox", true, false).add_child(load("res://scenes/princessacceptance1.tscn").instance())
 			princess_prog+=1
 	elif princess_prog==10:
 		var temp = load("res://form/form.tscn").instantiate()
@@ -137,9 +137,10 @@ func add_papers():
 
 
 
-func add_paper(document):
+func add_paper(document, count_up=true):
 	get_tree().get_root().find_child("inbox", true, false).add_child(document)
-	forms += 1
+	if count_up:
+		forms += 1
 
 func analyze_forms(outbox):
 	for i in outbox.get_children():
