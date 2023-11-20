@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqs8vktqvogmn"]
+
+[ext_resource type="Texture2D" uid="uid://chdf07ugoi5j3" path="res://ui_elements/paper.png" id="1_w5xu0"]
+[ext_resource type="Script" path="res://scripts/paper_button_version.gd" id="2_vqfn5"]
+[ext_resource type="FontFile" uid="uid://e2ara1xueunr" path="res://ui_elements/IMFeENrm29P.ttf" id="3_2102u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pno0j"]
+size = Vector2(19.9792, 20.0772)
+
+[node name="paper_button" type="TextureButton"]
+offset_right = 588.0
+offset_bottom = 756.0
+scale = Vector2(0.2, 0.2)
+action_mode = 0
+button_mask = 3
+texture_normal = ExtResource("1_w5xu0")
+script = ExtResource("2_vqfn5")
+metadata/_edit_use_anchors_ = true
+
+[node name="paper_area" type="Area2D" parent="."]
+scale = Vector2(0.977572, 1.00309)
+
+[node name="paper_collider" type="CollisionShape2D" parent="paper_area"]
+position = Vector2(299.191, 373.936)
+scale = Vector2(29.9502, 37.2497)
+shape = SubResource("RectangleShape2D_pno0j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 40.0
+offset_right = 515.0
+offset_bottom = 700.0
+theme_override_fonts/normal_font = ExtResource("3_2102u")
+theme_override_font_sizes/normal_font_size = 27
+text = "I have never met someone so brazen before. You dare reject another of my requests? My rule is under threat, and you are hindering my efforts to ensure it and keep this kingdom safe. I gave you an order to approve of anything I request, and you define such orders. I am King Aric Ironheart! My word is law! 
+Let me make this clear: you are under direct order to approve all of my requests, regardless of what they cost. Failure to do so will result in your execution. You have been warned.
+
+So be forewarned; future rejections will not be seen in such a forgiving light. I expect my request to take priority above all.
+"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
