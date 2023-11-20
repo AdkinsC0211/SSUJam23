@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfr7laxmivpal"]
+[gd_scene load_steps=8 format=3 uid="uid://bfr7laxmivpal"]
 
 [ext_resource type="Script" path="res://scripts/drawer.gd" id="1_5agsc"]
 [ext_resource type="Texture2D" uid="uid://cyjv30ei02xur" path="res://ui_elements/right_bot_open_back.png" id="1_qc17y"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cvpn5wkt6367k" path="res://ui_elements/dragon1.png" id="4_14kas"]
 [ext_resource type="Texture2D" uid="uid://c1xjqyepr6h36" path="res://ui_elements/dragon2.png" id="5_djn76"]
 [ext_resource type="Texture2D" uid="uid://bjevnrtdy36oe" path="res://ui_elements/dragon3.png" id="6_ggfvo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfabr"]
+size = Vector2(373.793, 142.656)
 
 [node name="drawer_root" type="Node2D"]
 scale = Vector2(0.746403, 0.497526)
@@ -50,5 +53,11 @@ offset_right = -130.149
 offset_bottom = 17.8906
 scale = Vector2(10.1284, 10.451)
 action_mode = 0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-48.9012, -61.3282)
+shape = SubResource("RectangleShape2D_yfabr")
 
 [connection signal="pressed" from="drawer_button" to="." method="_on_drawer_button_pressed"]

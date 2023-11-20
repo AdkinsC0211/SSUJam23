@@ -21,4 +21,3 @@ func fill_form(new_form:Form):
 	target_approved = new_form.target_approved
 	max_amount = new_form.largest_amount
 	will_return = new_form.plz_fix
-	
