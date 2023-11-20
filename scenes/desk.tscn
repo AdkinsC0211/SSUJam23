@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://btiy6ij80l11g" path="res://Approved.tscn" id="24_pepo3"]
 [ext_resource type="PackedScene" uid="uid://ckcfdicn236ey" path="res://NotApproved.tscn" id="25_hyexi"]
 [ext_resource type="PackedScene" uid="uid://dhdl2da8eg31a" path="res://lawpaper.tscn" id="26_6rnve"]
-[ext_resource type="PackedScene" uid="uid://upsl1g5mqktu" path="res://scenes/stickies.tscn" id="28_bso38"]
+[ext_resource type="PackedScene" path="res://scenes/stickies.tscn" id="28_bso38"]
 
 [node name="desk_root" type="Node2D"]
 scale = Vector2(0.999999, 0.999999)
